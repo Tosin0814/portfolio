@@ -11,7 +11,7 @@ export async function sendRequest(url, method ='GET', payload = null, error = 'B
     }
 
     const token = getToken()
-
+    console.log(token)
     if(token){
         options.headers ||= {}
         options.headers.Authorization = `Bearer ${token}`
@@ -21,4 +21,5 @@ export async function sendRequest(url, method ='GET', payload = null, error = 'B
 
     if(res.ok) return res.json()
 
-    throw new Error(error)}
+    throw new Error(error)
+}

@@ -9,7 +9,7 @@ export function getToken() {
     const payload = JSON.parse(window.atob(token.split('.')[1]))
 
     if (payload.exp < Date.now() / 1000) {
-        // troken expired
+        // token expired
         window.localStorage.removeItem('token')
         return null
     }
