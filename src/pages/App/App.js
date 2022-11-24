@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Helmet } from "react-helmet"
 
 
 // Components
@@ -17,13 +18,26 @@ import SkillsList from '../../components/SkillsList/SkillsList'
 // Helpers
 import { getUser } from '../../utilities/services/users';
 
-import '../../assets/css/style.css';
+
+// import '../../assets/css/style.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
     <>
+      <Helmet>
+        <script src="../../assets/vendor/purecounter/purecounter_vanilla.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/aos/aos.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/glightbox/js/glightbox.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/swiper/swiper-bundle.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/typed.js/typed.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/waypoints/noframework.waypoints.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/php-email-form/validate.js" type="text/javascript"></script>
+        <script src='../../assets/js/main.js' type="text/javascript"></script>
+      </Helmet>
       {/* Mobile nav toggle button */}
       <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -44,6 +58,7 @@ export default function App() {
       <Resume user={user}/>
       <Portfolio user={user}/>
       <Contact user={user}/>
+      
     </>
   );
 }
