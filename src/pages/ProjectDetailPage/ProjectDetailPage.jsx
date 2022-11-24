@@ -1,5 +1,10 @@
-export default function NewOrderPage() {
+import Scripts from "../../components/Scripts/Scripts";
+
+export default function ProjectDetailPage() {
   return (
-    <h1>NewOrderPage</h1>
+    <>
+    <Scripts/>
+    <h1>Project Details</h1>
+    </>
   );
 }

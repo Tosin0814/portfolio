@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { login } from '../../utilities/services/users'
+import { useNavigate } from 'react-router-dom';
 
 
 const defaultState = {
@@ -8,10 +9,17 @@ const defaultState = {
     error: ''
 }
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ user, setUser }) {
     const [formData, setFormData] = useState(defaultState)
 
     const { email, password, error } = formData;
+
+    const navigate = useNavigate()
+    useEffect(() =>{
+        if (user) {
+            navigate('/')
+        }
+    })
 
     const handleSubmit = async (e) => {
         // when we submit we basically just grab whatever we have in

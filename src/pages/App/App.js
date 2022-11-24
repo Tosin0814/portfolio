@@ -14,6 +14,7 @@ import Home from '../../components/Home/Home'
 import Portfolio from '../../components/Portfolio/Portfolio'
 import Resume from '../../components/Resume/Resume'
 import SkillsList from '../../components/SkillsList/SkillsList'
+import Scripts from '../../components/Scripts/Scripts';
 
 // Helpers
 import { getUser } from '../../utilities/services/users';
@@ -26,18 +27,7 @@ export default function App() {
 
   return (
     <>
-      <Helmet>
-        <script src="../../assets/vendor/purecounter/purecounter_vanilla.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/aos/aos.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/glightbox/js/glightbox.min.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/swiper/swiper-bundle.min.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/typed.js/typed.min.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/waypoints/noframework.waypoints.js" type="text/javascript"></script>
-        <script src="../../assets/vendor/php-email-form/validate.js" type="text/javascript"></script>
-        <script src='../../assets/js/main.js' type="text/javascript"></script>
-      </Helmet>
+      <Scripts/>
       {/* Mobile nav toggle button */}
       <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -47,18 +37,18 @@ export default function App() {
           <NavBar user={user} setUser={setUser}/>
         </div>
       </header>
-        <Routes>
-          {/* Route components in here */}
-          <Route path="/projects/:projectName" element={<ProjectDetailPage />} />
-          <Route path="/AdminLogin" element={<AuthPage user={user} setUser={setUser} />} />
-        </Routes>
+        
       <Home user={user}/>
       <About user={user}/>
       <SkillsList user={user}/>
       <Resume user={user}/>
       <Portfolio user={user}/>
       <Contact user={user}/>
-      
+      <Routes>
+        {/* Route components in here */}
+        <Route path="/projects/:projectName" element={<ProjectDetailPage />} />
+        {/* <Route path="/AdminLogin" element={<AuthPage user={user} setUser={setUser} />} /> */}
+      </Routes>
     </>
   );
 }

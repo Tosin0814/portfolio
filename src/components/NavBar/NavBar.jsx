@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+
 import * as userService from '../../utilities/services/users'
+import LoginForm from '../LoginForm/LoginForm';
 
 export default function NavBar({ user, setUser }) {
   const [profilePic, setProfilePic] = useState([])
@@ -22,6 +25,9 @@ export default function NavBar({ user, setUser }) {
   // );
   return(
       <nav id="navbar" className="NavBar nav-menu navbar">
+        <Routes>
+          <Route path="/AdminLogin" element={<LoginForm user={user} setUser={setUser} />} />
+        </Routes>
         <ul>
           <li><Link to="#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></Link></li>
           <li><Link to="#about" className="nav-link scrollto"><i className="bx bx-user"></i> <span>About</span></Link></li>
