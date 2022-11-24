@@ -42,6 +42,11 @@ export default function App() {
           <Route path="/AdminLogin" element={<AuthPage user={user} setUser={setUser} />} />
         </Routes>
       <Home user={user}/>
+      <About user={user}/>
+      <SkillsList user={user}/>
+      <Resume user={user}/>
+      <Portfolio user={user}/>
+      <Contact user={user}/>
     </main>
   );
 }
