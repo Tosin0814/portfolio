@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import AuthPage from '../AuthPage/AuthPage';
 import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
+import Profile from '../../components/Profile/Profile';
 import About from '../../components/About/About'
 import Contact from '../../components/Contact/Contact'
 import Home from '../../components/Home/Home'
@@ -22,17 +23,13 @@ export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
-    <main className="App">
+    <>
+      {/* Mobile nav toggle button */}
+      <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
       <header id="header">
         <div className="d-flex flex-column">
-          <div className="profile">
-            {/* <img src={profilePic} alt="No image" className="img-fluid rounded-circle"> </img> */}
-            <h1 className="text-light">Lukmon Ayanleye</h1>
-            <div className="social-links mt-3 text-center">
-              <a href="https://github.com/Tosin0814" target="_blank" className="github"><i className="bx bxl-github"></i></a>
-              <a href="https://www.linkedin.com/in/oluwatosin-ayanleye/" target="_blank" className="linkedin"><i className="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
+          <Profile user={user}/>
           <NavBar user={user} setUser={setUser}/>
         </div>
       </header>
@@ -47,6 +44,6 @@ export default function App() {
       <Resume user={user}/>
       <Portfolio user={user}/>
       <Contact user={user}/>
-    </main>
+    </>
   );
 }
