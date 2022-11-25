@@ -39,16 +39,19 @@ export default function App() {
       </header>
         
       <Home user={user}/>
-      <About user={user}/>
-      <SkillsList user={user}/>
-      <Resume user={user}/>
-      <Portfolio user={user}/>
-      <Contact user={user}/>
-      <Routes>
-        {/* Route components in here */}
-        <Route path="/projects/:projectName" element={<ProjectDetailPage />} />
-        {/* <Route path="/AdminLogin" element={<AuthPage user={user} setUser={setUser} />} /> */}
-      </Routes>
+      <main id='main'>
+        <About user={user}/>
+        <SkillsList user={user}/>
+        <Resume user={user}/>
+        <Portfolio user={user}/>
+        <Contact user={user}/>
+        <Routes>
+          {/* Route components in here */}
+          <Route path="/projects/:projectName" element={<ProjectDetailPage />} />
+          {/* <Route path="/AdminLogin" element={<AuthPage user={user} setUser={setUser} />} /> */}
+        </Routes>
+      </main>
+      
     </>
   );
 }

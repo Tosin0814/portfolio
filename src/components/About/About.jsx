@@ -1,9 +1,9 @@
-export default function Resume({user}) {
+export default function About({user}) {
     return(
-        <section id="resume" className="Resume resume">
+        <section id="about" className="About about">
             <div className="container">
                 <div className="section-title">
-                    <h2>Resume</h2>
+                    <h2>About</h2>
                 </div>
             </div>
         </section>

@@ -1,5 +1,7 @@
 export default function PortfolioItem({user}) {
     return(
-        <h1>PortfolioItem</h1>
+        <section id="portfolio-item" className="PortfolioItem">
+            <h1>PortfolioItem</h1>
+        </section>
     )
 }
