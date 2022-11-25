@@ -9,6 +9,14 @@ require('dotenv').config();
 require('./config/database');
 
 const userRouter = require('./routes/api/users')
+const aboutRouter = require('./routes/api/about')
+const contactRouter = require('./routes/api/contact')
+const homeRouter = require('./routes/api/home')
+const portfolioItemRouter = require('./routes/api/portfolioItem')
+const portfolioItemImageRouter = require('./routes/api/portfolioItemImage')
+const resumeDescriptionItemRouter = require('./routes/api/resumeDescriptionItem')
+const resumeItemRouter = require('./routes/api/resumeItem')
+const skillRouter = require('./routes/api/skill')
 
 const app = express();
 
@@ -25,6 +33,14 @@ app.use(require('./config/checkToken'))
 
 // API routes here
 app.use('/api/users', userRouter)
+app.use('/api/about', aboutRouter)
+app.use('/api/contact', contactRouter)
+app.use('/api/home', homeRouter)
+app.use('/api/portfolioItems', portfolioItemRouter)
+app.use('/api/portfolioItemImages', portfolioItemImageRouter)
+app.use('/api/resumeDescriptionItems', resumeDescriptionItemRouter)
+app.use('/api/resumeItems', resumeItemRouter)
+app.use('/api/skills', skillRouter)
 
 // "Catch all" route
 app.get('/*', function(req, res) {

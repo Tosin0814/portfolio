@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const portfolioImageSchema = new Schema({
+const portfolioItemImageSchema = new Schema({
     url: {
         type: String,
     }
@@ -26,7 +26,7 @@ const portfolioItemSchema = new Schema({
         type: Date,
         required: true
     },
-    portfolioItemImages: [portfolioImageSchema]
+    portfolioItemImages: [portfolioItemImageSchema]
 }, {
     timestamps: true,
 });

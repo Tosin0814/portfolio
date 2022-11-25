@@ -93,7 +93,6 @@ jspm_packages
 .DS_Store
 
 #Excluding build directory
-public/
 Footer
 © 2022 GitHub, Inc.
 Footer navigation
@@ -104,6 +103,5 @@ Status
 Docs
 Contact GitHub
 Pricing
-API
 Training
 Blog

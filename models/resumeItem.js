@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const descriptionItemSchema = new Schema({
+const resumeDescriptionItemSchema = new Schema({
     text: {
         type: String,
         required: true
@@ -31,7 +31,7 @@ const resumeItemSchema = new Schema({
         type: String,
         required: true
     },
-    descriptions: [descriptionItemSchema]
+    descriptions: [resumeDescriptionItemSchema]
 }, {
     timestamps: true,
 });
