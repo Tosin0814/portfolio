@@ -11,7 +11,6 @@ export async function sendRequest(url, method ='GET', payload = null, error = 'B
     }
 
     const token = getToken()
-    console.log(token)
     if(token){
         options.headers ||= {}
         options.headers.Authorization = `Bearer ${token}`

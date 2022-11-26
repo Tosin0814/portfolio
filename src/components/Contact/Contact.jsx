@@ -1,3 +1,4 @@
+import ContactForm from "../ContactForm/ContactForm"
 export default function Contact({user}) {
     return(
         <section id="contact" className="Contact contact">
@@ -5,8 +6,8 @@ export default function Contact({user}) {
                 <div className="section-title">
                     <h2>Contact</h2>
                 </div>
+                <ContactForm user={user}/>
             </div>
-            
         </section>
         
     )

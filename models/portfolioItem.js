@@ -26,7 +26,15 @@ const portfolioItemSchema = new Schema({
         type: Date,
         required: true
     },
-    portfolioItemImages: [portfolioItemImageSchema]
+    portfolioItemImages: [portfolioItemImageSchema],
+    github: {
+        type: String,
+        required: true
+    },
+    siteURL: {
+        type: String,
+        required: true
+    }
 }, {
     timestamps: true,
 });

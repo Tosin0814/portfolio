@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Helmet } from "react-helmet"
 
 
 // Components
+import Scripts from '../../components/Scripts/Scripts';
 import AuthPage from '../AuthPage/AuthPage';
 import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
@@ -14,7 +14,7 @@ import Home from '../../components/Home/Home'
 import Portfolio from '../../components/Portfolio/Portfolio'
 import Resume from '../../components/Resume/Resume'
 import SkillsList from '../../components/SkillsList/SkillsList'
-import Scripts from '../../components/Scripts/Scripts';
+
 
 // Helpers
 import { getUser } from '../../utilities/services/users';

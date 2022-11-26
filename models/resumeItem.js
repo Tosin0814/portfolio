@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const resumeDescriptionItemSchema = new Schema({
-    text: {
-        type: String,
-        required: true
-    }
-}, {
-    timestamps: true
-})
+// const resumeDescriptionItemSchema = new Schema({
+//     text: {
+//         type: String,
+//         required: true
+//     }
+// }, {
+//     timestamps: true
+// })
 
 const resumeItemSchema = new Schema({
     userId: {
@@ -23,15 +23,22 @@ const resumeItemSchema = new Schema({
         type: String,
         required: true
     },
-    duration: {
-        type: String,
+    start: {
+        type: Date,
+        required: true
+    },
+    end: {
+        type: Date,
         required: true
     },
     institution: {
         type: String,
         required: true
     },
-    descriptions: [resumeDescriptionItemSchema]
+    description:{
+        type: String,
+        required: true
+    },
 }, {
     timestamps: true,
 });

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
 import * as userService from '../../utilities/services/users'
+import About from '../About/About';
+import Home from '../Home/Home';
 import LoginForm from '../LoginForm/LoginForm';
 
 export default function NavBar({ user, setUser }) {
