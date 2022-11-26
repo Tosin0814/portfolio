@@ -56,7 +56,7 @@ export default function PortfolioItemForm({user}) {
             { user &&
                 <div className="ContactForm">
                     <div className="form-container">
-                        <h3>Portfolio Item Form</h3>
+                        <h3>Project Item Form</h3>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <label htmlFor="title">Title</label>
                             <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>

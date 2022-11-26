@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default function Profile({user}) {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return(
         <div className="profile">
             {/* <img src={profilePic} alt="No image" className="img-fluid rounded-circle"> </img> */}

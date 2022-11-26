@@ -7,8 +7,16 @@ import About from '../About/About';
 import Home from '../Home/Home';
 import LoginForm from '../LoginForm/LoginForm';
 
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default function NavBar({ user, setUser }) {
   const [profilePic, setProfilePic] = useState([])
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   function handleLogOut(){
     userService.logOut()
