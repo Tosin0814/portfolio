@@ -60,10 +60,11 @@ export default function SkillForm({user}) {
                             <input type="text" name="skill" id="skill" value={formData.skill} onChange={handleChange} required/>
 
                             <label htmlFor="rating">Rating</label>
-                            <select name="rating" id="rating" value={formData.rating} onChange={handleChange} required>
-                                <option value='Beginner'>Beginner</option>
-                                <option value='Intermediate'>Intermediate</option>
-                                <option value='Advanced'>Advanced</option>
+                            <select name="rating" id="rating" onChange={handleChange} required defaultValue={'default'}>
+                                <option value={"default"} disabled hidden>Select an Option</option>
+                                <option value={'Beginner'}>Beginner</option>
+                                <option value={'Intermediate'}>Intermediate</option>
+                                <option value={'Advanced'}>Advanced</option>
                             </select>
 
                             <label htmlFor="svg">SVG</label>

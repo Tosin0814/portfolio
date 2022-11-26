@@ -9,7 +9,7 @@ export default function Profile({user}) {
 
     return(
         <div className="profile">
-            {/* <img src={profilePic} alt="No image" className="img-fluid rounded-circle"> </img> */}
+            <img src="https://tosin-portfolio.s3.ca-central-1.amazonaws.com/1606037592592.jpeg" alt="No image" className="img-fluid rounded-circle"/>
             <h1 className="text-light">Lukmon Ayanleye</h1>
             <div className="social-links mt-3 text-center">
               <a href="https://github.com/Tosin0814" target="_blank" className="github"><i className="bx bxl-github"></i></a>

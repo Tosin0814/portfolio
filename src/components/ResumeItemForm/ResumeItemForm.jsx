@@ -60,9 +60,10 @@ export default function ResumeItemForm({user}) {
                         <h3>Resume Item Form</h3>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <label htmlFor="type">Type</label>
-                            <select name="type" id="type" value={formData.type} onChange={handleChange} required>
-                                <option value='edu'>Education</option>
-                                <option value='work'>Work Experience</option>
+                            <select name="type" id="type" onChange={handleChange} defaultValue={'default'} required>
+                                <option value={"default"} disabled hidden>Select an Option</option>
+                                <option value={'edu'}>Education</option>
+                                <option value={'work'}>Work Experience</option>
                             </select>
 
                             <label htmlFor="title">Title</label>

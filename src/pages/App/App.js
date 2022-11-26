@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 
+// Pages
+import HomePage from '../Homepage/HomePage';
+import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
+
 // Components
 import Scripts from '../../components/Scripts/Scripts';
-import AuthPage from '../AuthPage/AuthPage';
-import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
+// import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Profile from '../../components/Profile/Profile';
-import About from '../../components/About/About'
-import Contact from '../../components/Contact/Contact'
-import Home from '../../components/Home/Home'
-import Portfolio from '../../components/Portfolio/Portfolio'
-import Resume from '../../components/Resume/Resume'
-import SkillsList from '../../components/SkillsList/SkillsList'
+
 
 
 // Helpers
 import { getUser } from '../../utilities/services/users';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 
 // import '../../assets/css/style.css';
@@ -37,21 +36,13 @@ export default function App() {
           <NavBar user={user} setUser={setUser}/>
         </div>
       </header>
-        
-      <Home user={user}/>
-      <main id='main'>
-        <About user={user}/>
-        <SkillsList user={user}/>
-        <Resume user={user}/>
-        <Portfolio user={user}/>
-        <Contact user={user}/>
-        <Routes>
-          {/* Route components in here */}
-          <Route path="/projects/:projectName" element={<ProjectDetailPage />} />
-          {/* <Route path="/AdminLogin" element={<AuthPage user={user} setUser={setUser} />} /> */}
-        </Routes>
-      </main>
       
+      <Routes>
+          {/* Route components in here */}
+          <Route path="/" element={<HomePage user={user} />} />
+          <Route path="/projects" element={<ProjectDetailPage user={user} />} />
+          <Route path="/AdminLogin" element={<LoginForm user={user} setUser={setUser} />} />
+      </Routes>
     </>
   );
 }

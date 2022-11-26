@@ -1,4 +1,4 @@
-// Compoenents
+// Components
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import Scripts from "../../components/Scripts/Scripts";
@@ -16,7 +16,7 @@ export default function AuthPage({ user, setUser }) {
     <div className="AuthPage">
       <Scripts/>
       <h1>AuthPage</h1>
-      {/* <SignUpForm setUser={setUser}/> */}
+      <SignUpForm setUser={setUser}/>
       <LoginForm user={user} setUser={setUser}/>
     </div>
   );
