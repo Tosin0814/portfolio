@@ -53,19 +53,26 @@ export default function HomeForm({user}) {
         <>
             { user &&
                 <div className="ContactForm">
-                    <div className="form-container">
-                        <h3>Home Form</h3>
-                        <form onSubmit={handleSubmit} autoComplete="off">
-                            <label htmlFor="backgroundImage">background Image</label>
-                            <input type="text" name="backgroundImage" id="backgroundImage" value={formData.backgroundImage} onChange={handleChange} required/>
-
-                            <label htmlFor="title">Title</label>
-                            <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
-
-                            <label htmlFor="text">Image URL</label>
-                            <input type="text" name="text" id="text" value={formData.text} onChange={handleChange}/>
-
-                            <button type="submit" disabled={disabled}>Submit</button>
+                    <div className="form-container mx-auto  bg-light border border-secondary p-3">
+                        <h4 className="text-center">Home Form</h4>
+                        <form onSubmit={handleSubmit} autoComplete="off" encType="mulipart/formdata">
+                            <div className="form-group">
+                                <label htmlFor="backgroundImage">Background Image:&nbsp;</label>
+                                <input type="text" name="backgroundImage" id="backgroundImage" value={formData.backgroundImage} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="title">Title:&nbsp;</label>
+                                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="text">Image:&nbsp;</label>
+                                <input type="file" name="text" id="text" value={formData.text} onChange={handleChange}/>
+                            </div>
+                            <br />
+                            
+                            <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

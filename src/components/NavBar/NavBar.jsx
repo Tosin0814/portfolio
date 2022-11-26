@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
 
 import * as userService from '../../utilities/services/users'
-import About from '../About/About';
-import Home from '../Home/Home';
-import LoginForm from '../LoginForm/LoginForm';
-
-import { useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 export default function NavBar({ user, setUser }) {
 

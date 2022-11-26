@@ -53,18 +53,25 @@ export default function ContactForm({user}) {
         <>
             { user &&
                 <div className="ContactForm">
-                    <div className="form-container">
-                        <h3>Contact Form</h3>
+                    <div className="form-container mx-auto w-75 bg-light border border-secondary p-3">
+                        <h3 className="text-center">Contact Form</h3>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <label htmlFor="phoneNumber">Phone Number</label>
-                            <input type="text" name="phoneNumber" id="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required/>
-
-                            <label htmlFor="email">Email</label>
-                            <input type="text" name="email" id="email" value={formData.email} onChange={handleChange} required/>
-
-                            <label htmlFor="location">Location</label>
-                            <input type="text" name="location" id="location" value={formData.location} onChange={handleChange} required/>
-                            <button type="submit" disabled={disabled}>Submit</button>
+                            <div>
+                                <label htmlFor="phoneNumber">Phone Number:&nbsp;</label>
+                                <input type="text" name="phoneNumber" id="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div>
+                                <label htmlFor="email">Email:&nbsp;</label>
+                                <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div>
+                                <label htmlFor="location">Location:&nbsp;</label>
+                                <input type="text" name="location" id="location" value={formData.location} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

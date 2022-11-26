@@ -56,33 +56,44 @@ export default function ResumeItemForm({user}) {
         <>
             { user &&
                 <div className="ContactForm">
-                    <div className="form-container">
-                        <h3>Resume Item Form</h3>
+                    <div className="form-container mx-auto w-75 bg-light border border-secondary p-2">
+                        <h3 className="text-center">Resume Item Form</h3>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <label htmlFor="type">Type</label>
-                            <select name="type" id="type" onChange={handleChange} defaultValue={'default'} required>
-                                <option value={"default"} disabled hidden>Select an Option</option>
-                                <option value={'edu'}>Education</option>
-                                <option value={'work'}>Work Experience</option>
-                            </select>
-
-                            <label htmlFor="title">Title</label>
-                            <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
-
-                            
-                            <label htmlFor="start">Start</label>
-                            <input type="month" name="start" id="start" value={formData.start} onChange={handleChange} required/>
-                            
-                            <label htmlFor="end">End</label>
-                            <input type="month" name="end" id="end" value={formData.end} onChange={handleChange} required/>
-
-                            <label htmlFor="institution">Institution</label>
-                            <input type="text" name="institution" id="institution" value={formData.institution} onChange={handleChange} required/>
-
-                            <label htmlFor="description">Description</label>
-                            <textarea type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
-
-                            <button type="submit" disabled={disabled}>Submit</button>
+                            <div className="form-group">
+                                <label htmlFor="type">Type:&nbsp;</label>
+                                <select name="type" id="type" onChange={handleChange} defaultValue={'default'} required>
+                                    <option value={"default"} disabled hidden>Select an Option</option>
+                                    <option value={'edu'}>Education</option>
+                                    <option value={'work'}>Work Experience</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="title">Title:&nbsp;</label>
+                                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="start">Start:&nbsp;</label>
+                                <input type="month" name="start" id="start" value={formData.start} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="end">End:&nbsp;</label>
+                                <input type="month" name="end" id="end" value={formData.end} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="institution">Institution:&nbsp;</label>
+                                <input type="text" name="institution" id="institution" value={formData.institution} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="description">Description:&nbsp;</label>
+                                <textarea type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
+                            </div>
+                            <br />
+                            <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

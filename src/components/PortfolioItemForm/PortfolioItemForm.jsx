@@ -55,25 +55,35 @@ export default function PortfolioItemForm({user}) {
         <>
             { user &&
                 <div className="ContactForm">
-                    <div className="form-container">
-                        <h3>Project Item Form</h3>
+                    <div className="form-container mx-auto w-75 bg-light border border-secondary p-2">
+                        <h4 className="text-center">Project Item Form</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <label htmlFor="title">Title</label>
-                            <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
-
-                            <label htmlFor="description">Description</label>
-                            <textarea type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
-
-                            <label htmlFor="dateCreated">Date Created</label>
-                            <input type="month" name="dateCreated" id="dateCreated" value={formData.dateCreated} onChange={handleChange} required/>
-
-                            <label htmlFor="github">GitHub</label>
-                            <input type="text" name="github" id="github" value={formData.github} onChange={handleChange} required/>
-
-                            <label htmlFor="siteURL">Site URL</label>
-                            <input type="text" name="siteURL" id="siteURL" value={formData.siteURL} onChange={handleChange} required/>
-                            
-                            <button type="submit" disabled={disabled}>Submit</button>
+                            <div className="form-group">
+                                <label htmlFor="title">Title</label>
+                                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="description">Description:&nbsp;</label>
+                                <textarea type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="dateCreated">Date Created:&nbsp;</label>
+                                <input type="month" name="dateCreated" id="dateCreated" value={formData.dateCreated} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="github">GitHub:&nbsp;</label>
+                                <input type="text" name="github" id="github" value={formData.github} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="siteURL">Site URL:&nbsp;</label>
+                                <input type="text" name="siteURL" id="siteURL" value={formData.siteURL} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

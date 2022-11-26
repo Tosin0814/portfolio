@@ -53,24 +53,30 @@ export default function SkillForm({user}) {
         <>
             { user &&
                 <div className="ContactForm">
-                    <div className="form-container">
-                        <h3>Skill Form</h3>
-                        <form onSubmit={handleSubmit} autoComplete="off">
-                            <label htmlFor="skill">Skill</label>
-                            <input type="text" name="skill" id="skill" value={formData.skill} onChange={handleChange} required/>
-
-                            <label htmlFor="rating">Rating</label>
-                            <select name="rating" id="rating" onChange={handleChange} required defaultValue={'default'}>
-                                <option value={"default"} disabled hidden>Select an Option</option>
-                                <option value={'Beginner'}>Beginner</option>
-                                <option value={'Intermediate'}>Intermediate</option>
-                                <option value={'Advanced'}>Advanced</option>
-                            </select>
-
-                            <label htmlFor="svg">SVG</label>
-                            <input type="text" name="svg" id="svg" value={formData.svg} onChange={handleChange}/>
-
-                            <button type="submit" disabled={disabled}>Submit</button>
+                    <div className="form-container mx-auto w-50 bg-light border border-secondary p-2">
+                        <h4 className="text-center">Skill Form</h4>
+                        <form onSubmit={handleSubmit} autoComplete="off" encType="mulipart/formdata">
+                            <div className="form-group">
+                                <label htmlFor="skill">Skill:&nbsp;</label>
+                                <input type="text" name="skill" id="skill" value={formData.skill} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="rating">Rating:&nbsp;</label>
+                                <select name="rating" id="rating" onChange={handleChange} required defaultValue={'default'}>
+                                    <option value={"default"} disabled hidden>Select an Option</option>
+                                    <option value={'Beginner'}>Beginner</option>
+                                    <option value={'Intermediate'}>Intermediate</option>
+                                    <option value={'Advanced'}>Advanced</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="svg">SVG:&nbsp;</label>
+                                <input type="file" name="svg" id="svg" value={formData.svg} onChange={handleChange}/>
+                            </div>
+                            <br />
+                            <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

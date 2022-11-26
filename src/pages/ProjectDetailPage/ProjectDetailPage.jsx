@@ -7,9 +7,9 @@ export default function ProjectDetailPage({user}) {
   console.log("Details Page")
   return (
     <main>
-      <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
-          <div class="d-flex justify-content-between align-items-center">
+      <section id="breadcrumbs" className="breadcrumbs">
+        <div className="container">
+          <div className="d-flex justify-content-between align-items-center">
             <h2>Project Details</h2>
             <ol>
               <li><Link to="/">Home</Link></li>
@@ -38,8 +38,8 @@ export default function ProjectDetailPage({user}) {
                   <ul>
                     <li><strong>Category</strong>: Web design</li>
                     <li><strong>Project Date</strong>: 01 March, 2020</li>
-                    <li><strong>GitHub</strong>: <a href={"#"} target="_blank">www.example.com</a></li>
-                    <li><strong>Project URL</strong>: <a href={"#"} target="_blank">www.example.com</a></li>
+                    <li><strong>GitHub</strong>: <a href={"#"} target="_blank" rel="noreferrer">www.example.com</a></li>
+                    <li><strong>Project URL</strong>: <a href={"#"} target="_blank" rel="noreferrer">www.example.com</a></li>
                   </ul>
                 </div>
                 <div className="portfolio-description">
