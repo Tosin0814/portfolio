@@ -1,10 +1,19 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+
+
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
 import PortfolioItemImageForm from "../../components/PortfolioItemImageForm/PortfolioItemImageForm"
 
 export default function ProjectDetailPage({user}) {
-  console.log("Details Page")
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
   return (
     <main>
       <section id="breadcrumbs" className="breadcrumbs">
@@ -23,11 +32,13 @@ export default function ProjectDetailPage({user}) {
         <div className="container">
             <div className="row gy-4">
               <div className="col-lg-8">
-                <div className="portfolio-details-slider swiper">
-                  <div className="swiper-wrapper align-items-center">
-                    <PortfolioItemImage/>
+                <div className="portfolio-details-slider ">
+                  <div className=" align-items-center">
+                    <Slider {...settings}>
+                      <PortfolioItemImage/>
+                    </Slider>
+                    
                   </div>
-                  <div className="swiper-pagination"></div>
                   <PortfolioItemImageForm user={user}/>
                 </div>
               </div>
