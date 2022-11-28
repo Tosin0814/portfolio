@@ -1,35 +1,39 @@
 import { useState } from "react"
+import { create } from "../../utilities/api/contact"
 
 
-const defaultState = {
-    phoneNumber:'',
-    email:'',
-    location:'',
-}
 
-export default function ContactForm({user}) {
+export default function ContactForm({user, contact}) {
+    const [defaultState, setDefaultState] = useState({
+        phoneNumber: '',
+        email:'',
+        location:'',
+    })
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
         // when we submit we basically just grab whatever we have in
         // the state.
         e.preventDefault();
-        window.alert(JSON.stringify(formData))
-        // setFormData(defaultState)
-        // try{
-        //     const { name, password, email } = formData;
-        //     const data = {name, password, email}
-        //     const user = await signUp(data)
-        //     // as soon as we get the decoded data from the creat account api call
-        //     // (derived fromt he jwt in local storage), we can update app.js to store
-        //     // user in state
-        //     setUser(user)
-        // }catch (err) {
-        //     setFormData({
-        //         ...formData,
-        //         error: 'Sign up Failed - Try again!'
-        //     })
-        // }
+        // window.alert(JSON.stringify(formData))
+        
+        try{
+            const { phoneNumber, email, location } = formData;
+            const data = {...formData, userId:user._id}
+            console.log(data)
+            const contactData = await create(data)
+            setFormData(defaultState)
+            // console.log(user)
+            // const contact = await contactAPI.create(data)
+            
+            // setContact(contact)
+        }catch (err) {
+            setFormData({
+                ...formData,
+                error: 'Sign up Failed - Try again!'
+            })
+        }
+        
     }
 
     function handleChange(evt) {

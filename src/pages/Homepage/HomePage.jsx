@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { useState } from 'react'
+
 // Components
 import About from '../../components/About/About'
 import Contact from '../../components/Contact/Contact'
@@ -7,7 +10,19 @@ import Resume from '../../components/Resume/Resume'
 import SkillsList from '../../components/SkillsList/SkillsList'
 
 
+import { getContact } from '../../utilities/api/contact';
+
+
 export default function HomePage({user}) {
+    const [contact, setContact] =useState([])
+    useEffect (function () {
+        async function getContacts() {
+            const contacts = await getContact();
+            setContact(contacts)
+        }
+        getContacts()
+    },[])
+
     return (
         <>
             <Home user={user}/>
@@ -16,7 +31,7 @@ export default function HomePage({user}) {
                 <SkillsList user={user}/>
                 <Resume user={user}/>
                 <Portfolio user={user}/>
-                <Contact user={user}/>
+                <Contact user={user} contact={contact} />
             </main>
         </>
     )

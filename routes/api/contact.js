@@ -2,11 +2,12 @@ const express = require('express');
 const isLoggedIn = require('../../config/isLoggedIn');
 
 const router = express.Router();
-// const usersCtrl = require('../../controllers/api/users');
+const contactCtrl = require('../../controllers/api/contact');
 
-// router.post('/', usersCtrl.create);
-// router.post('/login', usersCtrl.login);
+router.get('/', contactCtrl.index);
+router.post('/createContact', isLoggedIn, contactCtrl.create);
+// router.post('/login', contactCtrl.login);
 
-// router.get('/check-token', isLoggedIn, usersCtrl.checkToken)
+// router.get('/check-token', isLoggedIn, contactCtrl.checkToken)
 
 module.exports = router
