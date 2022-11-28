@@ -42,7 +42,7 @@ export default function Contact({user, contact}) {
                         </div>
                     </div>
                 </div>
-                <ContactForm user={user} contact={contact} />
+                <ContactForm user={user} />
             </div>
         </section>
         

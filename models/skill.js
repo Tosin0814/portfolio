@@ -16,7 +16,7 @@ const skillSchema = new Schema({
         min: 0,
         max: 5,
     },
-    svg: {
+    image: {
         type: String,
     }
 }, {

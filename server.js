@@ -2,11 +2,15 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const multer = require('multer');
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
 
 // Always require and configure neat the top
 require('dotenv').config();
 // Connect to the database (after the dotenv)
 require('./config/database');
+require('./src/utilities/multer_S3');
 
 const userRouter = require('./routes/api/users')
 const aboutRouter = require('./routes/api/about')

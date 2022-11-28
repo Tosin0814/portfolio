@@ -1,34 +1,37 @@
 import { useState } from "react";
+import { createAbout } from "../../utilities/api/about";
 
-const defaultState = {
-    jobTitle:'',
-    text:'',
-    image:'',
-}
+// const defaultState = {
+//     jobTitle:'',
+//     text:'',
+//     image:'',
+// }
 
 export default function AboutForm({user}) {
+    const [defaultState, setDefaultState] = useState({
+        jobTitle:'',
+        text:'',
+        image:'',
+    })
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
         // when we submit we basically just grab whatever we have in
         // the state.
         e.preventDefault();
-        window.alert(JSON.stringify(formData))
-        setFormData(defaultState)
-        // try{
-        //     const { name, password, description } = formData;
-        //     const data = {name, password, description}
-        //     const user = await signUp(data)
-        //     // as soon as we get the decoded data from the creat account api call
-        //     // (derived fromt he jwt in local storage), we can update app.js to store
-        //     // user in state
-        //     setUser(user)
-        // }catch (err) {
-        //     setFormData({
-        //         ...formData,
-        //         error: 'Sign up Failed - Try again!'
-        //     })
-        // }
+        // window.alert(JSON.stringify(formData))
+        try{
+            const { jobTitle, text, image } = formData;
+            const data = {...formData, userId:user._id}
+            console.log(data)
+            const aboutData = await createAbout(data)
+            setFormData(defaultState)
+        }catch (err) {
+            setFormData({
+                ...formData,
+                error: 'About Creation Failed - Try again!'
+            })
+        }
     }
 
     function handleChange(evt) {
@@ -47,7 +50,7 @@ export default function AboutForm({user}) {
         setFormData(newFormData);
 
     }
-    const disabled = !formData.jobTitle || !formData.text || !formData.image
+    const disabled = !formData.jobTitle || !formData.text 
 
     return (
         <>
@@ -68,7 +71,7 @@ export default function AboutForm({user}) {
                             <br />
                             <div className="form-group">
                                 <label htmlFor="image">Image:&nbsp;</label>
-                                <input type="file" name="image" id="image" value={formData.image} onChange={handleChange} required/>
+                                <input type="file" name="image" id="image" value={formData.image} onChange={handleChange} />
                             </div>
                             <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>

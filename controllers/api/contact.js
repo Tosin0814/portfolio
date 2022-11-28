@@ -5,7 +5,7 @@ async function create (req, res, next){
     try{
         await Contact.deleteMany({})
         const contact = await Contact.create(req.body);
-        console.log(contact)
+        // console.log(contact)
         res.json(contact)
     }catch(err){
         res.status(400).json(err);

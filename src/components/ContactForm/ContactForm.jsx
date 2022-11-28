@@ -3,7 +3,7 @@ import { create } from "../../utilities/api/contact"
 
 
 
-export default function ContactForm({user, contact}) {
+export default function ContactForm({user}) {
     const [defaultState, setDefaultState] = useState({
         phoneNumber: '',
         email:'',
@@ -30,7 +30,7 @@ export default function ContactForm({user, contact}) {
         }catch (err) {
             setFormData({
                 ...formData,
-                error: 'Sign up Failed - Try again!'
+                error: 'Contact Creation Failed - Try again!'
             })
         }
         

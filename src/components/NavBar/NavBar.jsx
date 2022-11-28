@@ -2,8 +2,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as userService from '../../utilities/services/users'
+// import PureCounter from "@srexi/purecounterjs";
+import { useEffect } from 'react';
+
 
 export default function NavBar({ user, setUser }) {
+
+  // useEffect(() => {
+  //   const pure = new PureCounter();
+  // }, [])
 
   function handleLogOut(){
     userService.logOut()

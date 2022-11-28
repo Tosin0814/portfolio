@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const portfolioItemImageSchema = new Schema({
-    url: {
+    image: {
         type: String,
     }
 }, {

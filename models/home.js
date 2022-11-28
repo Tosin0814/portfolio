@@ -6,7 +6,7 @@ const homeSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true
     },
-    backgroundImage: {
+    image: {
         type: String,
         required: true
     },
