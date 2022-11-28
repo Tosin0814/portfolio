@@ -11,11 +11,13 @@ import SkillsList from '../../components/SkillsList/SkillsList'
 
 import { getContact } from '../../utilities/api/contact';
 import { getAbout } from '../../utilities/api/about'
+import { getHome } from '../../utilities/api/home'
 
 
 export default function HomePage({user}) {
     const [contact, setContact] =useState([])
     const [about, setAbout] = useState([])
+    const [home, setHome] = useState([])
     useEffect (function () {
         async function getContacts() {
             const contacts = await getContact();
@@ -25,6 +27,11 @@ export default function HomePage({user}) {
             const abouts = await getAbout();
             setAbout(abouts)
         }
+        async function getHomeInfo() {
+            const homeInfo = await getHome()
+            setHome(homeInfo)
+        }
+        getHomeInfo()
         getContacts()
         getAbouts()
     },[])
@@ -32,7 +39,7 @@ export default function HomePage({user}) {
 
     return (
         <>
-            <Home user={user}/>
+            <Home user={user} home={home} />
             <main id='main'>
                 <About user={user} about={about} />
                 <SkillsList user={user}/>

@@ -16,8 +16,7 @@ export default function AboutForm({user}) {
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
-        // when we submit we basically just grab whatever we have in
-        // the state.
+        
         e.preventDefault();
         // window.alert(JSON.stringify(formData))
         try{
@@ -35,13 +34,7 @@ export default function AboutForm({user}) {
     }
 
     function handleChange(evt) {
-        // Replace with new object and use a computed property
-        // to update the correct property
-        // const newFormData = {
-        //     ...formData, // use the existing formData
-        //     [evt.target.name]: evt.target.value, // override whatever key with the current fieldd's value
-        //     error: '' // clear any old errors as soon as the user interacts with the form
-        // };
+        
         const newFormData = {
             ...formData, // use the existing formData
             [evt.target.name]: evt.target.value, // override whatever key with the current fieldd's value

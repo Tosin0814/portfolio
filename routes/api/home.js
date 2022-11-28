@@ -1,12 +1,13 @@
 const express = require('express');
 const isLoggedIn = require('../../config/isLoggedIn');
+const multer_S3 = require('../../src/utilities/multer_S3');
 
 const router = express.Router();
-// const usersCtrl = require('../../controllers/api/users');
+const homeCtrl = require('../../controllers/api/home');
 
-// router.post('/', usersCtrl.create);
-// router.post('/login', usersCtrl.login);
+router.get('/', homeCtrl.getHome);
+router.post('/createHome', isLoggedIn, multer_S3.upload.single('image'), homeCtrl.createHome);
+router.put('/:id/updateHome', isLoggedIn, multer_S3.upload.single('image'), homeCtrl.updateHome);
 
-// router.get('/check-token', isLoggedIn, usersCtrl.checkToken)
 
 module.exports = router
