@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { createHome } from "../../utilities/api/home";
 
-// const defaultState = {
-//     image:'',
-//     title:'',
-//     text:'',
-// }
 
 export default function HomeForm({user,home, setHome}) {
     const [defaultState, setDefaultState] = useState({
@@ -20,7 +15,6 @@ export default function HomeForm({user,home, setHome}) {
         e.preventDefault();
         
         try{
-            // const { image, title, text } = formData;
             const data = {...formData, userId:user._id}
             console.log(data)
             const homeData = await createHome(data)
@@ -44,7 +38,7 @@ export default function HomeForm({user,home, setHome}) {
         setFormData(newFormData);
 
     }
-    const disabled = !formData.text || !formData.title
+    const disabled = !formData.text || !formData.title || !formData.image
 
     return (
         <>
