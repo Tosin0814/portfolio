@@ -18,12 +18,12 @@ export default function SkillForm({user, skills, setSkills}) {
             const data = {...formData, userId:user._id}
             console.log(data)
             const skillData = await createSkill(data)
-            // setSkills(...skills, skillData)
+            setSkills([...skills, skillData])
             setFormData(defaultState)
         }catch (err) {
             setFormData({
                 ...formData,
-                error: 'Home Creation Failed - Try again!'
+                error: 'Skill Creation Failed - Try again!'
             })
         }
         
