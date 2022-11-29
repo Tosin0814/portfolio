@@ -6,5 +6,5 @@ const skillCtrl = require('../../controllers/api/skill');
 
 router.get('/', skillCtrl.getSkills);
 router.post('/createSkill', isLoggedIn, skillCtrl.createSkill);
-router.post('/removeSkill', isLoggedIn, skillCtrl.removeSkill);
+router.delete('/removeSkill', isLoggedIn, skillCtrl.removeSkill);
 module.exports = router

@@ -13,6 +13,7 @@ import { getContact } from '../../utilities/api/contact';
 import { getAbout } from '../../utilities/api/about'
 import { getHome } from '../../utilities/api/home'
 import { getSkills } from '../../utilities/api/skill'
+import { removeSkill } from '../../utilities/api/skill'
 
 
 export default function HomePage({user}) {
@@ -43,13 +44,18 @@ export default function HomePage({user}) {
         getSkillList()
     },[])
     
+    async function deleteSkill(skill) {
+        // console.log(skill)
+        const newSkills = await removeSkill(skill)
+        setSkills(newSkills)
+    }
 
     return (
         <>
             <Home user={user} home={home} setHome={setHome} />
             <main id='main'>
                 <About user={user} about={about} setAbout={setAbout}/>
-                <SkillsList user={user} skills={skills} setSkills={setSkills} />
+                <SkillsList user={user} skills={skills} setSkills={setSkills} deleteSkill={deleteSkill} />
                 <Resume user={user}/>
                 <Portfolio user={user}/>
                 <Contact user={user} contact={contact} setContact={setContact}/>

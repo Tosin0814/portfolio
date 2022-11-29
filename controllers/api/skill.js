@@ -22,8 +22,9 @@ async function getSkills (req, res, next){
 
 async function removeSkill (req, res, next){
     try{
-        const skill = await Skill.findByIdAndRemove(req.params.id)
-        res.json(skill);
+        await Skill.findByIdAndRemove(req.body._id)
+        const skills = await Skill.find({})
+        res.json(skills);
     }catch(err){
         res.status(400).json("Unable to delete");
     }

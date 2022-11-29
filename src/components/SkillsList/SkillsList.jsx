@@ -8,7 +8,7 @@ import Skill from "../Skill/Skill";
 
 
 
-export default function SkillsList({user, skills, setSkills}) {
+export default function SkillsList({user, skills, setSkills, deleteSkill}) {
     useEffect(() => {
         AOS.init();
     }, [])
@@ -23,7 +23,7 @@ export default function SkillsList({user, skills, setSkills}) {
                 <div className="row skills-content" data-aos="fade-right" data-aos-delay='50' data-aos-duration="1000">
                     {skills &&
                         skills.map((skill, idx) => (
-                            <Skill key={idx} index={idx} skill={skill} />
+                            <Skill key={idx} deleteSkill={deleteSkill} skill={skill} user={user}/>
                         ))
                     }
                 </div>

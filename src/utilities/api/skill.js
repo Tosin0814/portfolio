@@ -10,5 +10,6 @@ export function createSkill(skillData){
 }
 
 export function removeSkill(skillData){
-    return sendRequest(`${BASE_URL}/:id/removeSkill`, "POST", skillData, 'Invalid Skill Data')
+    // console.log(skillData)
+    return sendRequest(`${BASE_URL}/removeSkill`, "DELETE", skillData, 'Invalid Skill Data')
 }
