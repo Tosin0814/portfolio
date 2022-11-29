@@ -3,8 +3,6 @@ import ContactForm from "../ContactForm/ContactForm"
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useState } from "react";
-import { getContact } from "../../utilities/api/contact";
 
 export default function Contact({user, contact, setContact}) {
     useEffect(() => {

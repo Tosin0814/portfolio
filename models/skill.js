@@ -11,10 +11,8 @@ const skillSchema = new Schema({
         required: true
     },
     rating: {
-        type: Number,
+        type: String,
         required: true,
-        min: 0,
-        max: 5,
     },
     image: {
         type: String,

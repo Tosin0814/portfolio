@@ -5,9 +5,9 @@ import { create } from "../../utilities/api/contact"
 
 export default function ContactForm({user, contact, setContact}) {
     const [defaultState, setDefaultState] = useState({
-        phoneNumber: '',
-        email:'',
-        location:'',
+        phoneNumber: contact.phoneNumber,
+        email: contact.email,
+        location: contact.location,
     })
     const [formData, setFormData] = useState(defaultState)
 
@@ -16,7 +16,6 @@ export default function ContactForm({user, contact, setContact}) {
         e.preventDefault();
         
         try{
-            const { phoneNumber, email, location } = formData;
             const data = {...formData, userId:user._id}
             console.log(data)
             const contactData = await create(data)

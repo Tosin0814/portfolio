@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const portfolioItemImageSchema = new Schema({
     image: {
         type: String,
+        required: true,
     }
 }, {
     timestamps: true,
