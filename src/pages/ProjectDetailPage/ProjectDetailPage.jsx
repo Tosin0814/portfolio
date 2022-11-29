@@ -14,6 +14,9 @@ export default function ProjectDetailPage({user}) {
     slidesToShow: 1,
     slidesToScroll: 1
   };
+
+  const projectParams = useParams()
+  console.log(projectParams)
   return (
     <main>
       <section id="breadcrumbs" className="breadcrumbs">
