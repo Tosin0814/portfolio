@@ -7,7 +7,7 @@ import { createAbout } from "../../utilities/api/about";
 //     image:'',
 // }
 
-export default function AboutForm({user}) {
+export default function AboutForm({user, about, setAbout}) {
     const [defaultState, setDefaultState] = useState({
         jobTitle:'',
         text:'',
@@ -24,6 +24,7 @@ export default function AboutForm({user}) {
             const data = {...formData, userId:user._id}
             console.log(data)
             const aboutData = await createAbout(data)
+            setAbout(aboutData)
             setFormData(defaultState)
         }catch (err) {
             setFormData({

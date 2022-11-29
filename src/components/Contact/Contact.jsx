@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 import { useState } from "react";
 import { getContact } from "../../utilities/api/contact";
 
-export default function Contact({user, contact}) {
+export default function Contact({user, contact, setContact}) {
     useEffect(() => {
         AOS.init();
     }, [])
@@ -42,7 +42,7 @@ export default function Contact({user, contact}) {
                         </div>
                     </div>
                 </div>
-                <ContactForm user={user} />
+                <ContactForm user={user} contact={contact} setContact={setContact} />
             </div>
         </section>
         

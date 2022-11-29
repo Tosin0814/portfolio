@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function About({user, about}) {
+export default function About({user, about, setAbout}) {
     useEffect(() => {
         AOS.init();
       }, [])
@@ -16,7 +16,7 @@ export default function About({user, about}) {
                     <h2>About</h2>
                     <h3>{about.jobTitle}</h3>
                 </div>
-                <AboutForm user={user}/>
+                <AboutForm user={user} about={about} setAbout={setAbout}/>
             </div>
         </section>
     )

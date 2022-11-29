@@ -7,7 +7,7 @@ import { createHome } from "../../utilities/api/home";
 //     text:'',
 // }
 
-export default function HomeForm({user}) {
+export default function HomeForm({user,home, setHome}) {
     const [defaultState, setDefaultState] = useState({
         image:'',
         title:'',
@@ -24,6 +24,7 @@ export default function HomeForm({user}) {
             const data = {...formData, userId:user._id}
             console.log(data)
             const homeData = await createHome(data)
+            setHome(homeData)
             setFormData(defaultState)
         }catch (err) {
             setFormData({

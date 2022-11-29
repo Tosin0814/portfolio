@@ -3,7 +3,7 @@ import { create } from "../../utilities/api/contact"
 
 
 
-export default function ContactForm({user}) {
+export default function ContactForm({user, contact, setContact}) {
     const [defaultState, setDefaultState] = useState({
         phoneNumber: '',
         email:'',
@@ -12,21 +12,17 @@ export default function ContactForm({user}) {
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
-        // when we submit we basically just grab whatever we have in
-        // the state.
+        
         e.preventDefault();
-        // window.alert(JSON.stringify(formData))
         
         try{
             const { phoneNumber, email, location } = formData;
             const data = {...formData, userId:user._id}
             console.log(data)
             const contactData = await create(data)
+            setContact(contactData)
             setFormData(defaultState)
-            // console.log(user)
-            // const contact = await contactAPI.create(data)
             
-            // setContact(contact)
         }catch (err) {
             setFormData({
                 ...formData,

@@ -39,13 +39,13 @@ export default function HomePage({user}) {
 
     return (
         <>
-            <Home user={user} home={home} />
+            <Home user={user} home={home} setHome={setHome} />
             <main id='main'>
-                <About user={user} about={about} />
+                <About user={user} about={about} setAbout={setAbout}/>
                 <SkillsList user={user}/>
                 <Resume user={user}/>
                 <Portfolio user={user}/>
-                <Contact user={user} contact={contact} />
+                <Contact user={user} contact={contact} setContact={setContact}/>
             </main>
         </>
     )
