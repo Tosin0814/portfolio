@@ -24,7 +24,7 @@ const portfolioItemSchema = new Schema({
         required: true
     },
     dateCreated: {
-        type: Date,
+        type: String,
         required: true
     },
     portfolioItemImages: [portfolioItemImageSchema],
