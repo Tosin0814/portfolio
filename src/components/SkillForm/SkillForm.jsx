@@ -1,44 +1,36 @@
 import { useState } from "react";
+import { createSkill } from "../../utilities/api/skill";
 
-const defaultState = {
-    skill:'',
-    rating:'',
-    svg:'',
-}
 
-export default function SkillForm({user}) {
+export default function SkillForm({user, skills, setSkills}) {
+    const defaultState = {
+        skill:'',
+        rating:'',
+        image:'',
+    }
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
-        // when we submit we basically just grab whatever we have in
-        // the state.
+        
         e.preventDefault();
-        window.alert(JSON.stringify(formData))
-        setFormData(defaultState)
-        // try{
-        //     const { name, password, description } = formData;
-        //     const data = {name, password, description}
-        //     const user = await signUp(data)
-        //     // as soon as we get the decoded data from the creat account api call
-        //     // (derived fromt he jwt in local storage), we can update app.js to store
-        //     // user in state
-        //     setUser(user)
-        // }catch (err) {
-        //     setFormData({
-        //         ...formData,
-        //         error: 'Sign up Failed - Try again!'
-        //     })
-        // }
+        
+        try{
+            const data = {...formData, userId:user._id}
+            console.log(data)
+            const skillData = await createSkill(data)
+            setSkills([...skills, skillData])
+            setFormData(defaultState)
+        }catch (err) {
+            setFormData({
+                ...formData,
+                error: 'Skill Creation Failed - Try again!'
+            })
+        }
+        
     }
 
     function handleChange(evt) {
-        // Replace with new object and use a computed property
-        // to update the correct property
-        // const newFormData = {
-        //     ...formData, // use the existing formData
-        //     [evt.target.name]: evt.target.value, // override whatever key with the current fieldd's value
-        //     error: '' // clear any old errors as soon as the user interacts with the form
-        // };
+        
         const newFormData = {
             ...formData, // use the existing formData
             [evt.target.name]: evt.target.value, // override whatever key with the current fieldd's value
@@ -47,7 +39,7 @@ export default function SkillForm({user}) {
         setFormData(newFormData);
 
     }
-    const disabled = !formData.skill || !formData.rating
+    const disabled = !formData.skill || !formData.rating || !formData.image
 
     return (
         <>
@@ -72,8 +64,8 @@ export default function SkillForm({user}) {
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="svg">SVG:&nbsp;</label>
-                                <input type="file" name="svg" id="svg" value={formData.svg} onChange={handleChange}/>
+                                <label htmlFor="image">Image:&nbsp;</label>
+                                <input type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
                             </div>
                             <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>

@@ -12,12 +12,15 @@ import SkillsList from '../../components/SkillsList/SkillsList'
 import { getContact } from '../../utilities/api/contact';
 import { getAbout } from '../../utilities/api/about'
 import { getHome } from '../../utilities/api/home'
+import { getSkills } from '../../utilities/api/skill'
+import { removeSkill } from '../../utilities/api/skill'
 
 
 export default function HomePage({user}) {
     const [contact, setContact] =useState([])
     const [about, setAbout] = useState([])
     const [home, setHome] = useState([])
+    const [skills, setSkills] = useState([])
     useEffect (function () {
         async function getContacts() {
             const contacts = await getContact();
@@ -31,18 +34,28 @@ export default function HomePage({user}) {
             const homeInfo = await getHome()
             setHome(homeInfo)
         }
+        async function getSkillList() {
+            const skillList = await getSkills()
+            setSkills(skillList)
+        }
         getHomeInfo()
         getContacts()
         getAbouts()
+        getSkillList()
     },[])
     
+    async function deleteSkill(skill) {
+        // console.log(skill)
+        const newSkills = await removeSkill(skill)
+        setSkills(newSkills)
+    }
 
     return (
         <>
             <Home user={user} home={home} setHome={setHome} />
             <main id='main'>
                 <About user={user} about={about} setAbout={setAbout}/>
-                <SkillsList user={user}/>
+                <SkillsList user={user} skills={skills} setSkills={setSkills} deleteSkill={deleteSkill} />
                 <Resume user={user}/>
                 <Portfolio user={user}/>
                 <Contact user={user} contact={contact} setContact={setContact}/>
