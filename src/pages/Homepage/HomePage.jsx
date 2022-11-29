@@ -15,6 +15,7 @@ import { getHome } from '../../utilities/api/home'
 import { getSkills } from '../../utilities/api/skill'
 import { removeSkill } from '../../utilities/api/skill'
 import { getPortfolioItems } from '../../utilities/api/portfolioItem'
+import { removePortfolioItem } from '../../utilities/api/portfolioItem'
 
 
 export default function HomePage({user}) {
@@ -57,6 +58,12 @@ export default function HomePage({user}) {
         setSkills(newSkills)
     }
 
+    async function deletePortfolioItem(item) {
+        // console.log(item)
+        const newPortfolioItemList = await removePortfolioItem(item)
+        setPortfolioItems(newPortfolioItemList)
+    }
+
     return (
         <>
             <Home user={user} home={home} setHome={setHome} />
@@ -64,7 +71,7 @@ export default function HomePage({user}) {
                 <About user={user} about={about} setAbout={setAbout}/>
                 <SkillsList user={user} skills={skills} setSkills={setSkills} deleteSkill={deleteSkill} />
                 <Resume user={user}/>
-                <Portfolio user={user} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} />
+                <Portfolio user={user} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} deletePortfolioItem={deletePortfolioItem} />
                 <Contact user={user} contact={contact} setContact={setContact}/>
             </main>
         </>
