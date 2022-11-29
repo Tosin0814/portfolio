@@ -9,9 +9,9 @@ import { createHome } from "../../utilities/api/home";
 
 export default function HomeForm({user,home, setHome}) {
     const [defaultState, setDefaultState] = useState({
-        image:'',
-        title:'',
-        text:'',
+        image: home.image,
+        title: home.title,
+        text: home.text,
     })
     const [formData, setFormData] = useState(defaultState)
 
@@ -20,7 +20,7 @@ export default function HomeForm({user,home, setHome}) {
         e.preventDefault();
         
         try{
-            const { image, title, text } = formData;
+            // const { image, title, text } = formData;
             const data = {...formData, userId:user._id}
             console.log(data)
             const homeData = await createHome(data)
@@ -52,7 +52,7 @@ export default function HomeForm({user,home, setHome}) {
                 <div className="ContactForm">
                     <div className="form-container mx-auto  bg-light border border-secondary p-3">
                         <h4 className="text-center">Home Form</h4>
-                        <form onSubmit={handleSubmit} autoComplete="off" encType="mulipart/formdata">
+                        <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group">
                                 <label htmlFor="title">Title:&nbsp;</label>
                                 <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
@@ -65,7 +65,7 @@ export default function HomeForm({user,home, setHome}) {
                             <br />
                             <div className="form-group">
                                 <label htmlFor="image">Image:&nbsp;</label>
-                                <input type="file" name="image" id="image" value={formData.image} onChange={handleChange}/>
+                                <input type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
                             </div>
                             <br />
                             
