@@ -39,7 +39,7 @@ export default function App() {
       <Routes>
           {/* Route components in here */}
           <Route path="/" element={<HomePage user={user} />} />
-          <Route path="/projects" element={<ProjectDetailPage user={user} />} />
+          <Route path="/projects/:projectName" element={<ProjectDetailPage user={user} />} />
           <Route path="/AdminLogin" element={<LoginForm user={user} setUser={setUser} />} />
       </Routes>
     </>

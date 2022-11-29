@@ -2,11 +2,10 @@ const express = require('express');
 const isLoggedIn = require('../../config/isLoggedIn');
 
 const router = express.Router();
-// const usersCtrl = require('../../controllers/api/users');
+const portfolioItemCtrl = require('../../controllers/api/portfolioItem');
 
-// router.post('/', usersCtrl.create);
-// router.post('/login', usersCtrl.login);
-
-// router.get('/check-token', isLoggedIn, usersCtrl.checkToken)
-
+router.get('/', portfolioItemCtrl.getPortfolioItems);
+router.post('/createPortfolioItem', isLoggedIn, portfolioItemCtrl.createPortfolioItem);
+router.put('/updatePortfolioItem', isLoggedIn, portfolioItemCtrl.updatePortfolioItem);
+router.delete('/removePortfolioItem', isLoggedIn, portfolioItemCtrl.removePortfolioItem);
 module.exports = router
