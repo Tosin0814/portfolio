@@ -14,6 +14,7 @@ import { getAbout } from '../../utilities/api/about'
 import { getHome } from '../../utilities/api/home'
 import { getSkills } from '../../utilities/api/skill'
 import { removeSkill } from '../../utilities/api/skill'
+import { getPortfolioItems } from '../../utilities/api/portfolioItem'
 
 
 export default function HomePage({user}) {
@@ -21,6 +22,7 @@ export default function HomePage({user}) {
     const [about, setAbout] = useState([])
     const [home, setHome] = useState([])
     const [skills, setSkills] = useState([])
+    const [portfolioItems, setPortfolioItems] = useState([])
     useEffect (function () {
         async function getContacts() {
             const contacts = await getContact();
@@ -38,10 +40,15 @@ export default function HomePage({user}) {
             const skillList = await getSkills()
             setSkills(skillList)
         }
+        async function getPortfolioItemList() {
+            const portfolioItemList = await getPortfolioItems()
+            setPortfolioItems(portfolioItemList)
+        }
         getHomeInfo()
         getContacts()
         getAbouts()
         getSkillList()
+        getPortfolioItemList()
     },[])
     
     async function deleteSkill(skill) {
@@ -57,7 +64,7 @@ export default function HomePage({user}) {
                 <About user={user} about={about} setAbout={setAbout}/>
                 <SkillsList user={user} skills={skills} setSkills={setSkills} deleteSkill={deleteSkill} />
                 <Resume user={user}/>
-                <Portfolio user={user}/>
+                <Portfolio user={user} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} />
                 <Contact user={user} contact={contact} setContact={setContact}/>
             </main>
         </>

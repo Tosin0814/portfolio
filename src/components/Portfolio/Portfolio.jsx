@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-export default function Portfolio({user}) {
+export default function Portfolio({user, portfolioItems, setPortfolioItems}) {
     useEffect(() => {
         AOS.init();
     }, [])
@@ -17,10 +17,15 @@ export default function Portfolio({user}) {
                     <h2>Projects</h2>
                     <p>Some of the interesting projects I have worked on can be viewed here</p>
                 </div>
-                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-                    <PortfolioItem />
+                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="1000">
+                    { portfolioItems &&
+                        portfolioItems.map((portfolioItem, idx) => (
+                            <PortfolioItem key={idx} portfolioItem={portfolioItem} user={user} />
+                        ))
+                    }
+                    
                 </div>
-                <PortfolioItemForm user={user}/>
+                <PortfolioItemForm user={user} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems}/>
             </div>
         </section>
     )
