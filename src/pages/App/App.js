@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 // Pages
 import HomePage from '../Homepage/HomePage';

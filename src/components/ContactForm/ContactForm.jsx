@@ -4,7 +4,7 @@ import { create } from "../../utilities/api/contact"
 
 
 export default function ContactForm({user, contact, setContact}) {
-    const [defaultState, setDefaultState] = useState({
+    const [defaultState] = useState({
         phoneNumber: contact.phoneNumber,
         email: contact.email,
         location: contact.location,
