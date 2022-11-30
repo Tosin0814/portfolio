@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
 import PortfolioItemImageForm from "../../components/PortfolioItemImageForm/PortfolioItemImageForm"
 
-export default function ProjectDetailPage({user}) {
+export default function ProjectDetailPage({user, portfolioItems}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,15 +14,24 @@ export default function ProjectDetailPage({user}) {
     slidesToShow: 1,
     slidesToScroll: 1
   };
+  // console.log(portfolioItems)
+  const projectParams = useParams()
+  // console.log("Project Params",projectParams)
+
+  const project = portfolioItems.filter((portfolioItem) => {
+    return portfolioItem.title.includes(projectParams.projectName)
+  })
+  // console.log("Current Project: ",project)
+
   return (
     <main>
       <section id="breadcrumbs" className="breadcrumbs">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
-            <h2>Project Details</h2>
+            <h2>{project[0].title} Details</h2>
             <ol>
               <li><Link to="/">Home</Link></li>
-              <li>Project Title</li>
+              <li>{project[0].title}</li>
             </ol>
           </div>
         </div>
@@ -45,17 +54,16 @@ export default function ProjectDetailPage({user}) {
 
               <div className="col-lg-4">
                 <div className="portfolio-info">
-                  <h3>Project information</h3>
+                  <h3>{project[0].title} information</h3>
                   <ul>
-                    <li><strong>Category</strong>: Web design</li>
-                    <li><strong>Project Date</strong>: 01 March, 2020</li>
-                    <li><strong>GitHub</strong>: <a href={"#"} target="_blank" rel="noreferrer">www.example.com</a></li>
-                    <li><strong>Project URL</strong>: <a href={"#"} target="_blank" rel="noreferrer">www.example.com</a></li>
+                    <li><strong>Project Date</strong>: {project[0].dateCreated}</li>
+                    <li><strong>GitHub</strong>: <a href={`${project[0].github}`} target="_blank" rel="noreferrer">{project[0].github}</a></li>
+                    <li><strong>Project URL</strong>: <a href={`${project[0].siteURL}`} target="_blank" rel="noreferrer">{project[0].siteURL}</a></li>
                   </ul>
                 </div>
                 <div className="portfolio-description">
                   <p>
-                    Description: Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                    {`${project[0].description}`}
                   </p>
                 </div>
               </div>
