@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -6,7 +7,7 @@ import Slider from "react-slick";
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
 import PortfolioItemImageForm from "../../components/PortfolioItemImageForm/PortfolioItemImageForm"
 
-export default function ProjectDetailPage({user, portfolioItems}) {
+export default function ProjectDetailPage({user, portfolioItems, setPortfolioItems}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -18,11 +19,12 @@ export default function ProjectDetailPage({user, portfolioItems}) {
   const projectParams = useParams()
   // console.log("Project Params",projectParams)
 
-  const project = portfolioItems.filter((portfolioItem) => {
+  const [project, setProject] = useState(portfolioItems.filter((portfolioItem) => {
     return portfolioItem.title.includes(projectParams.projectName)
-  })
+  }))
   // console.log("Current Project: ",project)
-
+  const [projectImages, setProjectImages] = useState(project[0].portfolioItemImages)
+  console.log(projectImages)
   return (
     <main>
       <section id="breadcrumbs" className="breadcrumbs">
@@ -44,11 +46,15 @@ export default function ProjectDetailPage({user, portfolioItems}) {
                 <div className="portfolio-details-slider ">
                   <div className=" align-items-center">
                     <Slider {...settings}>
-                      <PortfolioItemImage/>
+                      {
+                        project[0].portfolioItemImages.map((portfolioImage, idx) => (
+                          <PortfolioItemImage portfolioImage={portfolioImage} key={idx} user={user} />
+                        ))
+                      }
                     </Slider>
                     
                   </div>
-                  <PortfolioItemImageForm user={user}/>
+                  <PortfolioItemImageForm user={user} projectImages={projectImages} setProjectImages={setProjectImages} />
                 </div>
               </div>
 

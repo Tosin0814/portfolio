@@ -8,4 +8,5 @@ router.get('/', portfolioItemCtrl.getPortfolioItems);
 router.post('/createPortfolioItem', isLoggedIn, portfolioItemCtrl.createPortfolioItem);
 router.put('/updatePortfolioItem', isLoggedIn, portfolioItemCtrl.updatePortfolioItem);
 router.delete('/removePortfolioItem', isLoggedIn, portfolioItemCtrl.removePortfolioItem);
+
 module.exports = router
