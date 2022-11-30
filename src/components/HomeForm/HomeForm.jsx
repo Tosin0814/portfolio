@@ -3,7 +3,7 @@ import { createHome } from "../../utilities/api/home";
 
 
 export default function HomeForm({user,home, setHome}) {
-    const [defaultState, setDefaultState] = useState({
+    const [defaultState] = useState({
         image: home.image,
         title: home.title,
         text: home.text,

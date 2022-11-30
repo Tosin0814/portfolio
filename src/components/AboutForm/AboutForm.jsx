@@ -8,7 +8,7 @@ import { createAbout } from "../../utilities/api/about";
 // }
 
 export default function AboutForm({user, about, setAbout}) {
-    const [defaultState, setDefaultState] = useState({
+    const [defaultState] = useState({
         jobTitle: about.jobTitle,
         text: about.text,
         image: about.image,

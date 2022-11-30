@@ -15,7 +15,6 @@ import { getHome } from '../../utilities/api/home'
 import { getSkills } from '../../utilities/api/skill'
 import { removeSkill } from '../../utilities/api/skill'
 // import { getPortfolioItems } from '../../utilities/api/portfolioItem'
-import { removePortfolioItem } from '../../utilities/api/portfolioItem'
 
 
 export default function HomePage({user, portfolioItems, setPortfolioItems, deletePortfolioItem}) {

@@ -19,6 +19,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
   const projectParams = useParams()
   // console.log("Project Params",projectParams)
 
+  // eslint-disable-next-line no-unused-vars
   const [project, setProject] = useState(portfolioItems.filter((portfolioItem) => {
     return portfolioItem.title.includes(projectParams.projectName)
   }))
