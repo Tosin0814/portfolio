@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const portfolioItemImageSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
+    // portfolioItemId: {
+    //     type: Schema.Types.ObjectId,
+    //     required: true
+    // },
     image: {
         type: String,
         required: true,

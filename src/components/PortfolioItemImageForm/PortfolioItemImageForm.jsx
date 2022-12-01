@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { createPortfolioItemImage } from "../../utilities/api/portfolioItemImage";
 
-export default function PortfolioItemImageForm({user, projectImages, setProjectImages}) {
+export default function PortfolioItemImageForm({user, project, projectImages, updateProjectImages}) {
     // console.log("current project Images: ",projectImages)
+    // console.log(project)
 
     const defaultState = {
         image:'',
@@ -15,10 +16,11 @@ export default function PortfolioItemImageForm({user, projectImages, setProjectI
         e.preventDefault();
         
         try{
-            const data = {...formData, userId:user._id}
-            // console.log(data)
+            const data = {...formData, portfolioItemId:project._id}
+            console.log(data)
             const portfolioItemImageData = await createPortfolioItemImage(data)
-            setProjectImages([...projectImages, portfolioItemImageData])
+            console.log('returned data: ', portfolioItemImageData)
+            updateProjectImages(portfolioItemImageData)
             setFormData(defaultState)
         }catch (err) {
             setFormData({
@@ -47,6 +49,7 @@ export default function PortfolioItemImageForm({user, projectImages, setProjectI
                     <div className="form-container mx-auto w-50 bg-light border border-secondary p-2">
                         <h4 className="text-center">Image Form</h4>
                         <form onSubmit={handleSubmit} autoComplete="off" encType="mulipart/formdata">
+                           
                             <div className="form-group">
                                 <label htmlFor="image">Image:&nbsp;</label>
                                 <input type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
