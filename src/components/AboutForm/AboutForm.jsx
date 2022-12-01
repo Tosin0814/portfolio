@@ -11,6 +11,7 @@ export default function AboutForm({user, about, setAbout}) {
     const [defaultState] = useState({
         jobTitle: about.jobTitle,
         text: about.text,
+        text2: about.text2,
         image: about.image,
     })
     const [formData, setFormData] = useState(defaultState)
@@ -61,6 +62,11 @@ export default function AboutForm({user, about, setAbout}) {
                             <div className="form-group">
                                 <label htmlFor="text">Text:&nbsp;</label>
                                 <textarea type="text" rows="5" cols="35" name="text" id="text" value={formData.text} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="text2">Another Text:&nbsp;</label>
+                                <textarea type="text" rows="5" cols="35" name="text2" id="text2" value={formData.text2} onChange={handleChange}/>
                             </div>
                             <br />
                             <div className="form-group">
