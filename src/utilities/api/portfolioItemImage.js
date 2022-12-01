@@ -1,7 +1,7 @@
 import { sendRequest } from "../request";
 const BASE_URL = '/api/portfolioItemImages';
 
-export function getPortfolioItemImages(){
+export function getPortfolioItems(){
     return sendRequest(BASE_URL);
 }
 
