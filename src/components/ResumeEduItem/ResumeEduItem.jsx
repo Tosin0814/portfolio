@@ -7,7 +7,7 @@ export default function ResumeItem({user, resumeItem, deleteResumeItem}) {
     }
     return(
         <div className="resume-item">
-            <p>Type:{resumeItem.type}</p>
+            {/* <p>Type:{resumeItem.type}</p> */}
             <h1>{resumeItem.title}</h1>
             <h3>{resumeItem.institution}</h3>
             {resumeItem.description}
