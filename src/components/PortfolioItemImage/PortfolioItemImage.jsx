@@ -1,8 +1,9 @@
-export default function PortfolioItemImage({user, PortfolioImage}) {
+export default function PortfolioItemImage({user, portfolioImage}) {
 
     return(
-        <div id="portfolio-item" className="PortfolioItemImage swiper-slide">
-            <img src={`${PortfolioImage.image}`} alt="Not found" />
+        <div id="portfolio-item" className="PortfolioItemImage" >
+            {console.log('rendered image: ',portfolioImage)}
+            <img className="mx-auto" src={`${portfolioImage}`} alt="Not found" style={{width:400}} />
         </div>
     )
 }
