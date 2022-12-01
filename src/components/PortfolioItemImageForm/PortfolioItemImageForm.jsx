@@ -17,7 +17,7 @@ export default function PortfolioItemImageForm({user, project, projectImages, up
         
         try{
             const data = {...formData, portfolioItemId:project._id}
-            console.log(data)
+            console.log("My form data: ", data)
             const portfolioItemImageData = await createPortfolioItemImage(data)
             console.log('returned data: ', portfolioItemImageData)
             updateProjectImages(portfolioItemImageData)

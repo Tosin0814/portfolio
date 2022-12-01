@@ -1,13 +1,14 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-// import "~slick-carousel/slick/slick.css"; 
-// import "~slick-carousel/slick/slick-theme.css";
+
 
 
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
 import PortfolioItemImageForm from "../../components/PortfolioItemImageForm/PortfolioItemImageForm"
+import { getPortfolioItems } from "../../utilities/api/portfolioItemImage";
 
 export default function ProjectDetailPage({user, portfolioItems, setPortfolioItems}) {
   const settings = {
@@ -20,30 +21,40 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
     autoplaySpeed: 3000,
     cssEase: "linear",
   };
-  // console.log(portfolioItems)
+  
   const projectParams = useParams()
-  // console.log("Project Params",projectParams)
+  const [project, setProject] = useState([])
+  const [projectImages, setProjectImages] = useState([])
 
-  // eslint-disable-next-line no-unused-vars
-  const [project, setProject] = useState(portfolioItems.filter((portfolioItem) => {
-    return portfolioItem.title.includes(projectParams.projectName)
-  }))
-  // console.log("Current Project: ",project)
-  const [projectImages, setProjectImages] = useState(project[0].portfolioItemImages)
-  console.log('project Images: ',projectImages)
+  useEffect(function () {
+    async function getImages() {
+      const portfolioItems = await getPortfolioItems();
+      console.log("porfolio Items: ", portfolioItems)
+      const portfolioItem = await portfolioItems.filter((portfolioItem) => {
+        return portfolioItem.title.includes(projectParams.projectName)
+      })
+      setProject(portfolioItem[0])
 
+      setProjectImages(portfolioItem[0].portfolioItemImages)
+    }
+    getImages()
+  },[projectParams])
+  
   function updateProjectImages(projectImageData) {
-    setProjectImages([...project[0].portfolioItemImages, projectImageData])
+    setProjectImages([...projectImages, projectImageData])
   }
+
+  
+
   return (
     <main>
       <section id="breadcrumbs" className="breadcrumbs">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
-            <h2>{project[0].title} Details</h2>
+            <h2>{project.title} Details</h2>
             <ol>
               <li><Link to="/">Home</Link></li>
-              <li>{project[0].title}</li>
+              <li>{project.title}</li>
             </ol>
           </div>
         </div>
@@ -64,22 +75,22 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
                     </Slider>
                     <br />
                   </div>
-                  <PortfolioItemImageForm user={user} project={project[0]} projectImages={projectImages} updateProjectImages={updateProjectImages} />
+                  <PortfolioItemImageForm user={user} project={project} projectImages={projectImages} updateProjectImages={updateProjectImages} />
                 </div>
               </div>
 
               <div className="col-lg-4">
                 <div className="portfolio-info">
-                  <h3>{project[0].title} information</h3>
+                  <h3>{project.title} information</h3>
                   <ul>
-                    <li><strong>Project Date</strong>: {project[0].dateCreated}</li>
-                    <li><strong>GitHub</strong>: <a href={`${project[0].github}`} target="_blank" rel="noreferrer">{project[0].github}</a></li>
-                    <li><strong>Project URL</strong>: <a href={`${project[0].siteURL}`} target="_blank" rel="noreferrer">{project[0].siteURL}</a></li>
+                    <li><strong>Project Date</strong>: {project.dateCreated}</li>
+                    <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>
+                    <li><strong>Project URL</strong>: <a href={`${project.siteURL}`} target="_blank" rel="noreferrer">{project.siteURL}</a></li>
                   </ul>
                 </div>
                 <div className="portfolio-description">
                   <p>
-                    {`${project[0].description}`}
+                    {`${project.description}`}
                   </p>
                 </div>
               </div>
