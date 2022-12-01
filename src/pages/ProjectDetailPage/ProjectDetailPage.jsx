@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+// import "~slick-carousel/slick/slick.css"; 
+// import "~slick-carousel/slick/slick-theme.css";
 
 
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
@@ -13,7 +15,10 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
   };
   // console.log(portfolioItems)
   const projectParams = useParams()
@@ -25,7 +30,11 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
   }))
   // console.log("Current Project: ",project)
   const [projectImages, setProjectImages] = useState(project[0].portfolioItemImages)
-  console.log(projectImages)
+  console.log('project Images: ',projectImages)
+
+  function updateProjectImages(projectImageData) {
+    setProjectImages([...project[0].portfolioItemImages, projectImageData])
+  }
   return (
     <main>
       <section id="breadcrumbs" className="breadcrumbs">
@@ -44,18 +53,18 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
         <div className="container">
             <div className="row gy-4">
               <div className="col-lg-8">
-                <div className="portfolio-details-slider ">
-                  <div className=" align-items-center">
-                    <Slider {...settings}>
+                <div className="text-center">
+                  <div className=" align-items-center mx-auto"style={{width:500}}>
+                    <Slider {...settings} >
                       {
-                        project[0].portfolioItemImages.map((portfolioImage, idx) => (
-                          <PortfolioItemImage portfolioImage={portfolioImage} key={idx} user={user} />
+                        projectImages.map((portfolioImage, idx) => (
+                          <PortfolioItemImage portfolioImage={portfolioImage.image} key={idx} user={user} />
                         ))
                       }
                     </Slider>
-                    
+                    <br />
                   </div>
-                  <PortfolioItemImageForm user={user} projectImages={projectImages} setProjectImages={setProjectImages} />
+                  <PortfolioItemImageForm user={user} project={project[0]} projectImages={projectImages} updateProjectImages={updateProjectImages} />
                 </div>
               </div>
 
