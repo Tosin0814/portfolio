@@ -65,7 +65,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
             <div className="row gy-4">
               <div className="col-lg-8">
                 <div className="text-center">
-                  <div className=" align-items-center mx-auto"style={{width:800}}>
+                  <div className=" align-items-center mx-auto"style={{width:600}}>
                     <Slider {...settings} >
                       {
                         projectImages.map((portfolioImage, idx) => (
