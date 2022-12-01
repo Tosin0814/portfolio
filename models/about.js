@@ -16,7 +16,6 @@ const aboutSchema = new Schema({
     },
     text2: {
         type: String,
-        required: true
     },
     image: {
         type: String,
