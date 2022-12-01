@@ -17,7 +17,7 @@ export default function Resume({user, resumeItems, setResumeItems, deleteResumeI
                     <h2>Resume</h2>
                 </div>
                 <div className="row">
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <h3 className="resume-title">Work Experience</h3>
                         { resumeItems &&
                             resumeItems.map((resumeItem, idx) =>(
@@ -26,7 +26,7 @@ export default function Resume({user, resumeItems, setResumeItems, deleteResumeI
                             ))
                         }
                     </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div className="col-lg-6" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                         <h3 className="resume-title">Education</h3>
                         { resumeItems &&
                             resumeItems.map((resumeItem, idx) =>(

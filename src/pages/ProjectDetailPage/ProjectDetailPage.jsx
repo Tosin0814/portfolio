@@ -65,7 +65,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
             <div className="row gy-4">
               <div className="col-lg-8">
                 <div className="text-center">
-                  <div className=" align-items-center mx-auto"style={{width:500}}>
+                  <div className=" align-items-center mx-auto"style={{width:800}}>
                     <Slider {...settings} >
                       {
                         projectImages.map((portfolioImage, idx) => (
@@ -81,7 +81,6 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
 
               <div className="col-lg-4">
                 <div className="portfolio-info">
-                  <h3>{project.title} information</h3>
                   <ul>
                     <li><strong>Project Date</strong>: {project.dateCreated}</li>
                     <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>

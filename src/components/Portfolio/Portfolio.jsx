@@ -17,7 +17,7 @@ export default function Portfolio({user, portfolioItems, setPortfolioItems, dele
                     <h2>Projects</h2>
                     <p>Some of the interesting projects I have worked on can be viewed here</p>
                 </div>
-                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="500">
+                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
                     { portfolioItems &&
                         portfolioItems.map((portfolioItem, idx) => (
                             <PortfolioItem key={idx} portfolioItem={portfolioItem} deletePortfolioItem={deletePortfolioItem} user={user} />

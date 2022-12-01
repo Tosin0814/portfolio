@@ -15,7 +15,7 @@ export default function Contact({user, contact, setContact}) {
                 <div className="section-title">
                     <h2>Contact</h2>
                 </div>
-                <div className="row" data-aos="fade-up">
+                <div className="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
                     <div className="col d-flex align-items-stretch p-3">
                         <div className="info">
 
