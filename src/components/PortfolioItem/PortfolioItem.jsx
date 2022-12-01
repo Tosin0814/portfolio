@@ -11,7 +11,9 @@ export default function PortfolioItem({user, portfolioItem, deletePortfolioItem}
             <div className="portfolio-links">
                 <Link to={`/projects/${portfolioItem.title}`} title="More Details"><i className="bx bx-link"></i>
                     <div className="portfolio-wrap">
-                        <img src={portfolioItem.portfolioItemImages[0].image} className="img-fluid" alt="Not found"/>
+                        {portfolioItem.portfolioItemImages[0] &&
+                            <img src={portfolioItem.portfolioItemImages[0].image} className="img-fluid" alt="Not found" style={{width:500, height:250}}/>
+                        }
                     </div>
                     <h5 className="text-center text-dark">{portfolioItem.title}</h5>
                 </Link>

@@ -2,11 +2,10 @@ const express = require('express');
 const isLoggedIn = require('../../config/isLoggedIn');
 
 const router = express.Router();
-// const usersCtrl = require('../../controllers/api/users');
+const resumeItemCtrl = require('../../controllers/api/resumeItem')
 
-// router.post('/', usersCtrl.create);
-// router.post('/login', usersCtrl.login);
-
-// router.get('/check-token', isLoggedIn, usersCtrl.checkToken)
-
+router.get('/', resumeItemCtrl.getResumeItems);
+router.post('/createResumeItem', isLoggedIn, resumeItemCtrl.createResumeItem);
+router.put('/updateResumeItem', isLoggedIn, resumeItemCtrl.updateResumeItem);
+router.delete('/removeResumeItem', isLoggedIn, resumeItemCtrl.removeResumeItem);
 module.exports = router

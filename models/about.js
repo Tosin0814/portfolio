@@ -14,6 +14,9 @@ const aboutSchema = new Schema({
         type: String,
         required: true
     },
+    text2: {
+        type: String,
+    },
     image: {
         type: String,
         required: true
