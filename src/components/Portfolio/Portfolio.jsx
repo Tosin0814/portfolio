@@ -15,7 +15,6 @@ export default function Portfolio({user, portfolioItems, setPortfolioItems, dele
             <div className="container">
                 <div className="section-title">
                     <h2>Projects</h2>
-                    <p>Some of the interesting projects I have worked on can be viewed here</p>
                 </div>
                 <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
                     { portfolioItems &&

@@ -10,12 +10,17 @@ const aboutSchema = new Schema({
         type: String,
         required: true
     },
-    text: {
+    text1: {
         type: String,
         required: true
     },
     text2: {
         type: String,
+        // required: true
+    },
+    text3: {
+        type: String,
+        // required: true
     },
     image: {
         type: String,

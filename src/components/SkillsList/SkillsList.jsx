@@ -18,7 +18,6 @@ export default function SkillsList({user, skills, setSkills, deleteSkill}) {
             <div className="container" >
                 <div className="section-title">
                     <h2>Skills</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
                 <div className="row skills-content" data-aos="fade-right" data-aos-delay='100' data-aos-duration="1000">
                     {skills &&

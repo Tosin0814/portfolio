@@ -17,6 +17,13 @@ export default function Resume({user, resumeItems, setResumeItems, deleteResumeI
                     <h2>Resume</h2>
                 </div>
                 <div className="row">
+                    <p>
+                        <em>
+                            A Full Stack Software Developer not afraid to take on new challenges, 
+                            hyper-focused on getting things done to completion and obsessed with 
+                            product optimization.
+                        </em>
+                    </p>
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <h3 className="resume-title">Work Experience</h3>
                         { resumeItems &&

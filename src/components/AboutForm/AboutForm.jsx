@@ -9,10 +9,11 @@ import { createAbout } from "../../utilities/api/about";
 
 export default function AboutForm({user, about, setAbout}) {
     const [defaultState] = useState({
-        jobTitle: about.jobTitle,
-        text: about.text,
-        text2: about.text2,
-        image: about.image,
+        jobTitle: '',
+        text1: '',
+        text2: '',
+        text3:'',
+        image: '',
     })
     const [formData, setFormData] = useState(defaultState)
 
@@ -45,7 +46,7 @@ export default function AboutForm({user, about, setAbout}) {
         setFormData(newFormData);
 
     }
-    const disabled = !formData.jobTitle || !formData.text 
+    const disabled = !formData.jobTitle || !formData.text1 || !formData.text2 || !formData.text2 || !formData.image
 
     return (
         <>
@@ -60,13 +61,18 @@ export default function AboutForm({user, about, setAbout}) {
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="text">Text:&nbsp;</label>
-                                <textarea type="text" rows="5" cols="35" name="text" id="text" value={formData.text} onChange={handleChange} required/>
+                                <label htmlFor="text1">Intro Text:&nbsp;</label>
+                                <textarea type="text" rows="5" cols="30" name="text1" id="text1" value={formData.text1} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="text2">Another Text:&nbsp;</label>
-                                <textarea type="text" rows="5" cols="35" name="text2" id="text2" value={formData.text2} onChange={handleChange}/>
+                                <label htmlFor="text2">Body Text:&nbsp;</label>
+                                <textarea type="text" rows="5" cols="30" name="text2" id="text2" value={formData.text2} onChange={handleChange} required/>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="text3">Body Text 2:&nbsp;</label>
+                                <textarea type="text" rows="5" cols="30" name="text3" id="text3" value={formData.text3} onChange={handleChange} />
                             </div>
                             <br />
                             <div className="form-group">
