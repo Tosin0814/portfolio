@@ -9,7 +9,11 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
         start:'',
         end:'',
         institution:'',
-        description:'',
+        description1:'',
+        description2:'',
+        description3:'',
+        description4:'',
+        description5:'',
     }
     const [formData, setFormData] = useState(defaultState)
 
@@ -41,7 +45,7 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
         setFormData(newFormData);
 
     }
-    const disabled = !formData.type || !formData.description || !formData.start || !formData.end || !formData.institution || !formData.title
+    const disabled = !formData.type || !formData.description1 || !formData.start || !formData.end || !formData.institution || !formData.title
 
     return (
         <>
@@ -80,8 +84,28 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="description">Description:&nbsp;</label>
-                                <textarea type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
+                                <label htmlFor="description1">Description 1:&nbsp;</label>
+                                <textarea type="text" name="description1" id="description1" value={formData.description1} onChange={handleChange} required></textarea>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="description2">Description 2(Optional):&nbsp;</label>
+                                <textarea type="text" name="description2" id="description2" value={formData.description2} onChange={handleChange} ></textarea>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="description3">Description 3(Optional):&nbsp;</label>
+                                <textarea type="text" name="description3" id="description3" value={formData.description3} onChange={handleChange} ></textarea>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="description4">Description 4(Optional):&nbsp;</label>
+                                <textarea type="text" name="description4" id="description4" value={formData.description4} onChange={handleChange} ></textarea>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="description5">Description 5(Optional):&nbsp;</label>
+                                <textarea type="text" name="description5" id="description5" value={formData.description5} onChange={handleChange} ></textarea>
                             </div>
                             <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
