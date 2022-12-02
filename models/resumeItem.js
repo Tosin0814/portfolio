@@ -35,9 +35,21 @@ const resumeItemSchema = new Schema({
         type: String,
         required: true
     },
-    description:{
+    description1:{
         type: String,
         required: true
+    },
+    description2:{
+        type: String,
+    },
+    description3:{
+        type: String,
+    },
+    description4:{
+        type: String,
+    },
+    description5:{
+        type: String,
     },
 }, {
     timestamps: true,
