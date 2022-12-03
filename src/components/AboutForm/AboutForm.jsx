@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { createAbout } from "../../utilities/api/about";
 
-// const defaultState = {
-//     jobTitle:'',
-//     text:'',
-//     image:'',
-// }
-
 export default function AboutForm({user, about, setAbout}) {
     const [defaultState] = useState({
         jobTitle: '',
@@ -20,11 +14,9 @@ export default function AboutForm({user, about, setAbout}) {
     const handleSubmit = async (e) =>{
         
         e.preventDefault();
-        // window.alert(JSON.stringify(formData))
         try{
-            // const { jobTitle, text, image } = formData;
             const data = {...formData, userId:user._id}
-            console.log(data)
+            // console.log(data)
             const aboutData = await createAbout(data)
             setAbout(aboutData)
             setFormData(defaultState)

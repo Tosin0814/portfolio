@@ -17,7 +17,7 @@ export default function ContactForm({user, contact, setContact}) {
         
         try{
             const data = {...formData, userId:user._id}
-            console.log(data)
+            // console.log(data)
             const contactData = await create(data)
             setContact(contactData)
             setFormData(defaultState)
@@ -32,13 +32,7 @@ export default function ContactForm({user, contact, setContact}) {
     }
 
     function handleChange(evt) {
-        // Replace with new object and use a computed property
-        // to update the correct property
-        // const newFormData = {
-        //     ...formData, // use the existing formData
-        //     [evt.target.name]: evt.target.value, // override whatever key with the current fieldd's value
-        //     error: '' // clear any old errors as soon as the user interacts with the form
-        // };
+        
         const newFormData = {
             ...formData, // use the existing formData
             [evt.target.name]: evt.target.value, // override whatever key with the current fieldd's value

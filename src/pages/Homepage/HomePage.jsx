@@ -16,7 +16,6 @@ import { getSkills } from '../../utilities/api/skill'
 import { removeSkill } from '../../utilities/api/skill'
 import { getResumeItems } from '../../utilities/api/resumeItem'
 import { removeResumeItem } from '../../utilities/api/resumeItem'
-// import { getPortfolioItems } from '../../utilities/api/portfolioItem'
 
 
 export default function HomePage({user, portfolioItems, setPortfolioItems, deletePortfolioItem}) {
@@ -25,7 +24,6 @@ export default function HomePage({user, portfolioItems, setPortfolioItems, delet
     const [home, setHome] = useState([])
     const [skills, setSkills] = useState([])
     const [resumeItems, setResumeItems] = useState([])
-    // const [portfolioItems, setPortfolioItems] = useState([])
     useEffect (function () {
         async function getContacts() {
             const contacts = await getContact();
@@ -47,26 +45,20 @@ export default function HomePage({user, portfolioItems, setPortfolioItems, delet
             const resumeItemList = await getResumeItems()
             setResumeItems(resumeItemList)
         }
-        // async function getPortfolioItemList() {
-        //     const portfolioItemList = await getPortfolioItems()
-        //     setPortfolioItems(portfolioItemList)
-        // }
+        
         getHomeInfo()
         getContacts()
         getAbouts()
         getSkillList()
         getResumeItemList()
-        // getPortfolioItemList()
     },[])
     
     async function deleteSkill(skill) {
-        // console.log(skill)
         const newSkills = await removeSkill(skill)
         setSkills(newSkills)
     }
 
     async function deleteResumeItem(item) {
-        // console.log(item)
         const newResumeItemList = await removeResumeItem(item)
         setResumeItems(newResumeItemList)
     }

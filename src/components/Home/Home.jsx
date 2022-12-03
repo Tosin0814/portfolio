@@ -13,8 +13,8 @@ export default function Home({user, home, setHome}) {
         <>
             <section id="hero" className="d-flex flex-column justify-content-center align-items-center" style={{background: `url(${home.image}) top center`, backgroundAttachment: 'fixed'}}>
                 <div className="hero-container" data-aos-delay='100' data-aos="fade-up" data-aos-duration="1000">
-                    <h1>{home.title}</h1>
-                    <p>I am {home.text}</p>
+                    <span><h3 className="text-light">I am </h3></span><span><h1>{home.title}.</h1></span>
+                    <p>{home.text}</p>
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center">
                     <div className="hero-container" data-aos="fade-right" data-aos-duration="1000">

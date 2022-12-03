@@ -6,6 +6,6 @@ export function getPortfolioItems(){
 }
 
 export function createPortfolioItemImage(portfolioItemImageData){
-    console.log("API", portfolioItemImageData)
+    // console.log("API", portfolioItemImageData)
     return sendRequest(`${BASE_URL}/createPortfolioItemImage`, "POST", portfolioItemImageData, 'Invalid Portfolio Item Image Data')
 }

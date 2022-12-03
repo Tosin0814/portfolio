@@ -1,4 +1,5 @@
 import ContactForm from "../ContactForm/ContactForm"
+import './Contact.css'
 
 import { useEffect } from "react";
 import AOS from 'aos';

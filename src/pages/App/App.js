@@ -10,7 +10,6 @@ import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Profile from '../../components/Profile/Profile';
 import LoginForm from '../../components/LoginForm/LoginForm';
-// import Portfolio from '../../components/Portfolio/Portfolio'
 
 
 // Helpers

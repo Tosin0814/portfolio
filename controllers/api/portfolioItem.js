@@ -4,7 +4,7 @@ const PortfolioItem = require('../../models/portfolioItem');
 async function createPortfolioItem (req, res, next){
     try{
         const portfolioItem = await PortfolioItem.create(req.body);
-        console.log(portfolioItem)
+        // console.log(portfolioItem)
         res.json(portfolioItem)
     }catch(err){
         res.status(400).json(err);

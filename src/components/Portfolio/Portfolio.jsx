@@ -1,5 +1,6 @@
 import PortfolioItemForm from "../PortfolioItemForm/PortfolioItemForm"
 import PortfolioItem from "../PortfolioItem/PortfolioItem"
+import './Portfolio.css'
 
 import { useEffect } from "react";
 import AOS from 'aos';

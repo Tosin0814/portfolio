@@ -4,7 +4,7 @@ const Skill = require('../../models/skill');
 async function createSkill (req, res, next){
     try{
         const skill = await Skill.create(req.body);
-        console.log(skill)
+        // console.log(skill)
         res.json(skill)
     }catch(err){
         res.status(400).json(err);
