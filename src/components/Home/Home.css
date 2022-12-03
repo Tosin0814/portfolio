@@ -2,11 +2,9 @@
 #hero {
     width: 100%;
     height: 100vh;
-    /* background: url("https://tosin-portfolio.s3.ca-central-1.amazonaws.com/IMG_4360_2.jpg") top center; */
     background-size:cover;
     background-repeat: no-repeat;
-    background-attachment: 'fixed';
-    background-position: 30% 50%;
+    background-attachment: fixed;
 }
 
 #hero:before {

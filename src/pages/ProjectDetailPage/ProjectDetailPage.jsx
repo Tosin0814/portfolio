@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
 import PortfolioItemImageForm from "../../components/PortfolioItemImageForm/PortfolioItemImageForm"
 import { getPortfolioItems } from "../../utilities/api/portfolioItemImage";
+import './PortfolioDetailPage.css'
 
 export default function ProjectDetailPage({user, portfolioItems, setPortfolioItems}) {
   const settings = {
@@ -65,7 +66,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
             <div className="row gy-4">
               <div className="col-lg-8">
                 <div className="text-center">
-                  <div className=" align-items-center mx-auto"style={{width:600}}>
+                  <div className=" align-items-center mx-auto slider">
                     <Slider {...settings} >
                       {
                         projectImages.map((portfolioImage, idx) => (
