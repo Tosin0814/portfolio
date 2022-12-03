@@ -1,6 +1,7 @@
 import ResumeItemForm from "../ResumeItemForm/ResumeItemForm"
 import ResumeWorkItem from "../ResumeWorkItem/ResumeWorkItem";
 import ResumeEduItem from "../ResumeEduItem/ResumeEduItem";
+import './Resume.css'
 
 import { useEffect } from "react";
 import AOS from 'aos';

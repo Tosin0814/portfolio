@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import * as userService from '../../utilities/services/users'
-// import PureCounter from "@srexi/purecounterjs";
-
+import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
 
