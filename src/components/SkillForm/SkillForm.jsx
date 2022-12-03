@@ -16,7 +16,7 @@ export default function SkillForm({user, skills, setSkills}) {
         
         try{
             const data = {...formData, userId:user._id}
-            console.log(data)
+            // console.log(data)
             const skillData = await createSkill(data)
             setSkills([...skills, skillData])
             setFormData(defaultState)

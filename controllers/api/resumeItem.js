@@ -4,7 +4,7 @@ const ResumeItem = require('../../models/resumeItem');
 async function createResumeItem (req, res, next){
     try{
         const resumeItem = await ResumeItem.create(req.body);
-        console.log(resumeItem)
+        // console.log(resumeItem)
         res.json(resumeItem)
     }catch(err){
         res.status(400).json(err);

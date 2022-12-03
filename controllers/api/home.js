@@ -5,7 +5,7 @@ async function createHome (req, res, next){
     try{
         await Home.deleteMany({})
         const home = await Home.create(req.body);
-        console.log(home)
+        // console.log(home)
         res.json(home)
     }catch(err){
         res.status(400).json(err);

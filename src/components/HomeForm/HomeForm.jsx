@@ -16,7 +16,7 @@ export default function HomeForm({user,home, setHome}) {
         
         try{
             const data = {...formData, userId:user._id}
-            console.log(data)
+            // console.log(data)
             const homeData = await createHome(data)
             setHome(homeData)
             setFormData(defaultState)

@@ -4,7 +4,7 @@ async function createAbout (req, res, next){
     try{
         await About.deleteMany({})
         const about = await About.create(req.body);
-        console.log(about)
+        // console.log(about)
         res.json(about)
     }catch(err){
         res.status(400).json(err);

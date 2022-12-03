@@ -22,7 +22,7 @@ export default function About({user, about, setAbout}) {
                 <div className="row">
                     <div className="col-lg-4" data-aos="fade-right">
                         { about.image &&
-                            <img src={`${about.image}`} class="img-fluid" alt=""></img>
+                            <img src={`${about.image}`} className="img-fluid" alt=""></img>
                         }
                     </div>
                     <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos-delay='100' data-aos="fade-left" data-aos-duration="1000">

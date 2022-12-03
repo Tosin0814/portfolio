@@ -18,7 +18,7 @@ export default function PortfolioItemForm({user, portfolioItems, setPortfolioIte
         
         try{
             const data = {...formData, userId:user._id}
-            console.log(data)
+            // console.log(data)
             const portfolioItemData = await createPortfolioItem(data)
             setPortfolioItems([...portfolioItems, portfolioItemData])
             setFormData(defaultState)

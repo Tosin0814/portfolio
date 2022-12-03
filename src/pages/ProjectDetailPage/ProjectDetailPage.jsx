@@ -30,7 +30,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
   useEffect(function () {
     async function getImages() {
       const portfolioItems = await getPortfolioItems();
-      console.log("porfolio Items: ", portfolioItems)
+      // console.log("porfolio Items: ", portfolioItems)
       const portfolioItem = await portfolioItems.filter((portfolioItem) => {
         return portfolioItem.title.includes(projectParams.projectName)
       })

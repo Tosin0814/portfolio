@@ -23,7 +23,7 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
         
         try{
             const data = {...formData, userId:user._id}
-            console.log(data)
+            // console.log(data)
             const resumeItemData = await createResumeItem(data)
             setResumeItems([...resumeItems, resumeItemData])
             setFormData(defaultState)
