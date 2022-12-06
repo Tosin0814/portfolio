@@ -9,4 +9,6 @@ router.get('/', aboutCtrl.getAbout);
 router.post('/createAbout', isLoggedIn, aboutCtrl.createAbout);
 router.put('/:id/updateAbout', isLoggedIn, aboutCtrl.updateAbout);
 
+
+
 module.exports = router
