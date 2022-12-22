@@ -43,7 +43,6 @@ export default function App() {
     <>
       {/* Mobile nav toggle button */}
       <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
       <header id="header">
         <div className="d-flex flex-column">
           <Profile user={user}/>
