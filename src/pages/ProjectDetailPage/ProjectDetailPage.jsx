@@ -54,7 +54,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
           <div className="d-flex justify-content-between align-items-center">
             <h2>{project.title} Details</h2>
             <ol>
-              <li><Link to="/">Home</Link></li>
+              <li><a href="/">Home</a></li>
               <li>{project.title}</li>
             </ol>
           </div>

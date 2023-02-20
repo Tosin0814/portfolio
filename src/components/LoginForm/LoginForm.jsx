@@ -35,6 +35,7 @@ export default function LoginForm({ user, setUser }) {
             // (derived fromt he jwt in local storage), we can update app.js to store
             // user in state
             setUser(user)
+            // navigate('/')
         } catch (err) {
             setFormData({
                 ...formData,

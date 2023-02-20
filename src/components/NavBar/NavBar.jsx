@@ -5,9 +5,10 @@ import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
 
-  function handleLogOut(){
+  function handleLogOut(e){
     userService.logOut()
     setUser(null)
+    e.reload()
   }
 
   return(
