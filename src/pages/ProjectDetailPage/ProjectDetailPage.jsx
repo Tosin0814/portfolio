@@ -48,7 +48,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
   
 
   return (
-    <main id="main">
+    <main id="">
       <section id="breadcrumbs" className="breadcrumbs">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
