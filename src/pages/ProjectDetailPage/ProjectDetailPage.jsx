@@ -45,6 +45,7 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
     setProjectImages([...projectImages, projectImageData])
   }
 
+  document.title = project.title
   
 
   return (
