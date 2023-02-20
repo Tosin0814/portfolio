@@ -7,8 +7,8 @@ import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 
 // Components
 // import AuthPage from '../AuthPage/AuthPage';
-import NavBar from '../../components/NavBar/NavBar';
-import Profile from '../../components/Profile/Profile';
+// import NavBar from '../../components/NavBar/NavBar';
+// import Profile from '../../components/Profile/Profile';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
 
@@ -44,16 +44,16 @@ export default function App() {
       {/* Mobile nav toggle button */}
       <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-      <header id="header">
+      {/* <header id="header">
         <div className="d-flex flex-column">
           <Profile user={user}/>
           <NavBar user={user} setUser={setUser}/>
         </div>
-      </header>
+      </header> */}
       
       <Routes>
           {/* Route components in here */}
-          <Route path="/" element={<HomePage user={user} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} deletePortfolioItem={deletePortfolioItem} />} />
+          <Route path="/" element={<HomePage user={user} setUser={setUser} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} deletePortfolioItem={deletePortfolioItem} />} />
           <Route path="/projects/:projectName" element={<ProjectDetailPage user={user} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} />} />
           <Route path="/AdminLogin" element={<LoginForm user={user} setUser={setUser} />} />
       </Routes>

@@ -13,12 +13,12 @@ export default function NavBar({ user, setUser }) {
   return(
       <nav id="navbar" className="NavBar nav-menu navbar">
         <ul>
-          <li><Link to="/#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></Link></li>
-          <li><Link to="/#about" className="nav-link scrollto"><i className="bx bx-user"></i> <span>About</span></Link></li>
-          <li><Link to="/#skills" className="nav-link scrollto"><i className="bx bx-cog" ></i> <span>Skills</span></Link></li>
-          <li><Link to="/#resume" className="nav-link scrollto"><i className="bx bx-file-blank"></i> <span>Resume</span></Link></li>
-          <li><Link to="/#portfolio" className="nav-link scrollto"><i className="bx bx-book-content"></i> <span>Projects</span></Link></li>
-          <li><Link to="/#contact" className="nav-link scrollto"><i className="bx bx-envelope"></i> <span>Contact</span></Link></li>
+          <li><Link to="#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></Link></li>
+          <li><Link to="#about" className="nav-link scrollto"><i className="bx bx-user"></i> <span>About</span></Link></li>
+          <li><Link to="#skills" className="nav-link scrollto"><i className="bx bx-cog" ></i> <span>Skills</span></Link></li>
+          <li><Link to="#resume" className="nav-link scrollto"><i className="bx bx-file-blank"></i> <span>Resume</span></Link></li>
+          <li><Link to="#portfolio" className="nav-link scrollto"><i className="bx bx-book-content"></i> <span>Projects</span></Link></li>
+          <li><Link to="#contact" className="nav-link scrollto"><i className="bx bx-envelope"></i> <span>Contact</span></Link></li>
           {/* Login & Logout UI */}
           {/* <li>
             {!user ?

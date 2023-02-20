@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 
 // Components
+import NavBar from '../../components/NavBar/NavBar';
+import Profile from '../../components/Profile/Profile';
 import About from '../../components/About/About'
 import Contact from '../../components/Contact/Contact'
 import Home from '../../components/Home/Home'
@@ -18,7 +20,7 @@ import { getResumeItems } from '../../utilities/api/resumeItem'
 import { removeResumeItem } from '../../utilities/api/resumeItem'
 
 
-export default function HomePage({user, portfolioItems, setPortfolioItems, deletePortfolioItem}) {
+export default function HomePage({user, setUser, portfolioItems, setPortfolioItems, deletePortfolioItem}) {
     const [contact, setContact] =useState([])
     const [about, setAbout] = useState([])
     const [home, setHome] = useState([])
@@ -65,6 +67,15 @@ export default function HomePage({user, portfolioItems, setPortfolioItems, delet
 
     return (
         <>
+            {/* Mobile nav toggle button */}
+            <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
+            
+            <header id="header">
+                <div className="d-flex flex-column">
+                    <Profile user={user}/>
+                    <NavBar user={user} setUser={setUser}/>
+                </div>
+            </header>
             <Home user={user} home={home} setHome={setHome} />
             <main id='main'>
                 <About user={user} about={about} setAbout={setAbout}/>
