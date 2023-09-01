@@ -31,7 +31,7 @@ export default function NavBar({ user, setUser }) {
           {/* Show only Logout UI */}
           <li>
             {user &&
-            <Link to="" onClick={handleLogOut} className="nav-link"><i className="bx bx-log-out"></i> <span>Logout</span></Link>
+            <Link onClick={handleLogOut} className="nav-link"><i className="bx bx-log-out"></i> <span>Logout</span></Link>
             }
           </li>
         </ul>
