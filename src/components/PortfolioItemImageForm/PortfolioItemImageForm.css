@@ -1,17 +1,18 @@
-.SkillForm {
-    height: 55vh;
-    width: 100%;
+.ProjectItemImageForm .form-container {
+    max-height: 28vh;
+    width: 50%;
     overflow-y: scroll;
     border-radius: 5px;
     padding: 10px;
     background-color: rgba(248, 240, 240, 0.8);
     text-align: center;
+    margin: 0 auto;
 }
 
-.SkillForm h4 {
+.ProjectItemImageForm h4 {
     font-weight: 800;
 }
 
-.SkillForm label {
+.ProjectItemImageForm label {
     font-size: 13px;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createPortfolioItemImage } from "../../utilities/api/portfolioItemImage";
+import './PortfolioItemImageForm.css'
 
 export default function PortfolioItemImageForm({user, project, projectImages, updateProjectImages}) {
 
@@ -44,16 +45,14 @@ export default function PortfolioItemImageForm({user, project, projectImages, up
         <>
             { user &&
                 <div className="ProjectItemImageForm">
-                    <div className="form-container mx-auto w-50 bg-light border border-secondary p-2">
-                        <h4 className="text-center">Image Form</h4>
+                    <div className="form-container border border-secondary">
+                        <h4 className="text-center">Add Image</h4>
                         <form onSubmit={handleSubmit} autoComplete="off" encType="mulipart/formdata">
                            
-                            <div className="form-group">
-                                <label htmlFor="image">Image:&nbsp;</label>
-                                <input type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
-                            </div>
-                            <br />
-                            
+                            <div className="form-group mb-1">
+                                <label className="form-label" htmlFor="image">Image URL&nbsp;</label>
+                                <input className="form-control" type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
+                            </div>                            
                             <button type="submit" disabled={disabled} className="btn btn-primary">Upload</button>
                         </form>
                     </div>

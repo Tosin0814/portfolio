@@ -45,7 +45,7 @@ export default function SkillForm({user, skills, setSkills}) {
     return (
         <>
             { user &&
-                <div className="SkillForm w-100 border border-secondary">
+                <div className="SkillForm border border-secondary">
                     <div className="form-container ">
                         <h4 className="text-center">Skill</h4>
                         <form onSubmit={handleSubmit} autoComplete="off" encType="mulipart/formdata">

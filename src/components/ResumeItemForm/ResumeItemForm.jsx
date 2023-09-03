@@ -51,7 +51,7 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
         <>
             { user &&
                 <div className="ResumeItemForm">
-                    <div className="form-container w-100 border border-secondary">
+                    <div className="form-container border border-secondary">
                         <h4 className="text-center">Resume Item</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-3">
