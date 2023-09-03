@@ -50,17 +50,17 @@ export default function HomeForm({user,home, setHome}) {
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-1">
                                 <label htmlFor="title" className="form-label">Full Name</label>
-                                <input class="form-control" type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
+                                <input className="form-control" type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group mb-1">
                                 <label htmlFor="text" className="form-label">Summary</label>
-                                <input class="form-control" type="text" name="text" id="text" value={formData.text} onChange={handleChange} required/>
+                                <input className="form-control" type="text" name="text" id="text" value={formData.text} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group mb-1">
                                 <label htmlFor="image" className="form-label">Image URL</label>
-                                <input class="form-control" type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
+                                <input className="form-control" type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
                             </div>
                             <br />
                             
