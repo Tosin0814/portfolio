@@ -1,0 +1,15 @@
+.HomeForm {
+    background-color: red;
+    max-height: 65vh;
+    max-width: 30vw;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.HomeForm h4 {
+    font-weight: 800;
+}
+
+.HomeForm label {
+    font-size: 13px;
+}
