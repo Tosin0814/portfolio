@@ -11,7 +11,17 @@ export default function Home({user, home, setHome}) {
 
     return(
         <>
-            <section id="hero" className="d-flex flex-column justify-content-center align-items-center" style={{background: `url(${home.image}) top center`, backgroundAttachment: 'fixed'}}>
+            <section id="hero" className="Home hero d-flex flex-column justify-content-center align-items-center" style={
+                {
+                    width: '100%',
+                    height: '100vh',
+                    backgroundAttachment: 'fixed', 
+                    backgroundSize: 'cover', 
+                    backgroundRepeat: 'no-repeat', 
+                    backgroundPositionY: 'top', 
+                    backgroundPositionX: 'center', 
+                    backgroundImage: `url(${home.image})` 
+                }}>
                 <div className="hero-container" data-aos-delay='100' data-aos="fade-up" data-aos-duration="1000">
                     <span><h3 className="text-light">I am </h3></span><span><h1>{home.title}.</h1></span>
                     <p>{home.text}</p>
