@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createPortfolioItemImage } from "../../utilities/api/portfolioItemImage";
 import './PortfolioItemImageForm.css'
 
-export default function PortfolioItemImageForm({user, project, projectImages, updateProjectImages}) {
+export default function PortfolioItemImageForm({user, project, updateProject}) {
 
     const defaultState = {
         image:'',
@@ -11,15 +11,13 @@ export default function PortfolioItemImageForm({user, project, projectImages, up
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
-        
         e.preventDefault();
-        
         try{
             const data = {...formData, portfolioItemId:project._id}
             // console.log("My form data: ", data)
-            const portfolioItemImageData = await createPortfolioItemImage(data)
+            const updatedProject = await createPortfolioItemImage(data)
             // console.log('returned data: ', portfolioItemImageData)
-            updateProjectImages(portfolioItemImageData)
+            updateProject(updatedProject)
             setFormData(defaultState)
         }catch (err) {
             setFormData({

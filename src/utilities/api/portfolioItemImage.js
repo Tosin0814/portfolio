@@ -1,9 +1,6 @@
 import { sendRequest } from "../request";
 const BASE_URL = '/api/portfolioItemImages';
 
-export function getPortfolioItems(){
-    return sendRequest(BASE_URL);
-}
 
 export function createPortfolioItemImage(portfolioItemImageData){
     // console.log("API", portfolioItemImageData)

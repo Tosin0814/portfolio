@@ -5,6 +5,10 @@ export function getPortfolioItems(){
     return sendRequest(BASE_URL);
 }
 
+export function getPortfolioItem(projectName){
+    return sendRequest(`${BASE_URL}/portfolioItem/${projectName}`)
+}
+
 export function createPortfolioItem(portfolioItemData){
     return sendRequest(`${BASE_URL}/createPortfolioItem`, "POST", portfolioItemData, 'Invalid Portfolio Item Data')
 }
