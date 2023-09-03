@@ -13,7 +13,7 @@ export default function Home({user, home, setHome}) {
         <>
             <section id="hero" className="Home hero d-flex flex-column justify-content-center align-items-center" style={
                 {
-                    width: '100%',
+                    width: '100vw',
                     height: '100vh',
                     backgroundAttachment: 'fixed', 
                     backgroundSize: 'cover', 
