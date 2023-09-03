@@ -26,7 +26,9 @@ export default function SkillsList({user, skills, setSkills, deleteSkill}) {
                         ))
                     }
                 </div>
-                <SkillForm user={user} skills={skills} setSkills={setSkills} />
+                <div className="w-100">
+                    <SkillForm user={user} skills={skills} setSkills={setSkills} />
+                </div>
             </div>
         </section>
     )

@@ -1,16 +1,16 @@
-.AboutForm .form-container {
-    height: 65vh;
-    width: 100%;
+.SkillForm {
+    height: 55vh;
     overflow-y: scroll;
     border-radius: 5px;
     padding: 10px;
     background-color: rgba(248, 240, 240, 0.8);
+    text-align: center;
 }
 
-.AboutForm h4 {
+.SkillForm h4 {
     font-weight: 800;
 }
 
-.AboutForm label {
+.SkillForm label {
     font-size: 13px;
 }

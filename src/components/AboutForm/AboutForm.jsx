@@ -48,31 +48,26 @@ export default function AboutForm({user, about, setAbout}) {
                     <div className="form-container border border-secondary">
                         <h4 className="text-center">About Form</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="jobTitle">Job Title</label>
                                 <input type="text" className="form-control" name="jobTitle" id="jobTitle" value={formData.jobTitle} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="text1" className="form-label">Intro Text</label>
                                 <textarea type="text" className="form-control" rows="5" cols="30" name="text1" id="text1" value={formData.text1} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="text2" className="form-label">Body Text 1</label>
                                 <textarea type="text" className="form-control" rows="5" cols="30" name="text2" id="text2" value={formData.text2} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="text3" className="form-label">Body Text 2</label>
                                 <textarea type="text" className="form-control" rows="5" cols="30" name="text3" id="text3" value={formData.text3} onChange={handleChange} />
                             </div>
-                            <br />
-                            <div className="form-group mb-1">
-                                <label htmlFor="image" className="form-label">Image</label>
+                            <div className="form-group mb-3">
+                                <label htmlFor="image" className="form-label">Image URL</label>
                                 <input type="text" className="form-control" name="image" id="image" value={formData.image} onChange={handleChange} required/>
                             </div>
-                            <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>

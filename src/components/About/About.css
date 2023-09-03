@@ -38,3 +38,8 @@
   max-height: 65vh;
   border-radius: 5px;
 }
+
+.about img {
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
