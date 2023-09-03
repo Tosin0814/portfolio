@@ -46,7 +46,7 @@ export default function AboutForm({user, about, setAbout}) {
             { user &&
                 <div className="AboutForm">
                     <div className="form-container border border-secondary">
-                        <h4 className="text-center">About Form</h4>
+                        <h4 className="text-center">About</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-3">
                                 <label htmlFor="jobTitle" className="form-label">Job Title</label>

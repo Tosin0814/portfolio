@@ -52,9 +52,9 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
             { user &&
                 <div className="ResumeItemForm">
                     <div className="form-container w-100 border border-secondary">
-                        <h3 className="text-center">Resume Item Form</h3>
+                        <h4 className="text-center">Resume Item</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="type">Type</label>
                                 <select name="type" className="form-select" id="type" onChange={handleChange} defaultValue={'default'} required>
                                     <option value={"default"} disabled hidden>Select an Option</option>
@@ -62,52 +62,42 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
                                     <option value={'work'}>Work Experience</option>
                                 </select>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="title">Title</label>
                                 <input className="form-control" type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="start">Start</label>
                                 <input className="form-control" type="month" name="start" id="start" value={formData.start} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="end">End</label>
                                 <input className="form-control" type="month" name="end" id="end" value={formData.end} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="institution">Institution</label>
                                 <input className="form-control" type="text" name="institution" id="institution" value={formData.institution} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="description1">Description 1</label>
                                 <textarea className="form-control" type="text" name="description1" id="description1" value={formData.description1} onChange={handleChange} required></textarea>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="description2">Description 2(Optional)</label>
                                 <textarea className="form-control" type="text" name="description2" id="description2" value={formData.description2} onChange={handleChange} ></textarea>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="description3">Description 3(Optional)</label>
                                 <textarea className="form-control" type="text" name="description3" id="description3" value={formData.description3} onChange={handleChange} ></textarea>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="description4">Description 4(Optional)</label>
                                 <textarea className="form-control" type="text" name="description4" id="description4" value={formData.description4} onChange={handleChange} ></textarea>
                             </div>
-                            <br />
-                            <div className="form-group">
+                            <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="description5">Description 5(Optional)</label>
                                 <textarea className="form-control" type="text" name="description5" id="description5" value={formData.description5} onChange={handleChange} ></textarea>
                             </div>
-                            <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>

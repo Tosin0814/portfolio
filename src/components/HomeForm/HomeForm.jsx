@@ -46,7 +46,7 @@ export default function HomeForm({user,home, setHome}) {
             { user &&
                 <div className="HomeForm">
                     <div className="form-container mx-auto border border-secondary p-3">
-                        <h4 className="text-center">Home Form</h4>
+                        <h4 className="text-center">Home</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-3">
                                 <label htmlFor="title" className="form-label">Full Name</label>
