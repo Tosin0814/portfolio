@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import './HomePage.css'
 
 // Components
 import NavBar from '../../components/NavBar/NavBar';
@@ -76,8 +77,8 @@ export default function HomePage({user, setUser, portfolioItems, setPortfolioIte
                     <NavBar user={user} setUser={setUser}/>
                 </div>
             </header>
-            <Home user={user} home={home} setHome={setHome} />
             <main id='main'>
+                <Home user={user} home={home} setHome={setHome} />
                 <About user={user} about={about} setAbout={setAbout}/>
                 <SkillsList user={user} skills={skills} setSkills={setSkills} deleteSkill={deleteSkill} />
                 <Resume user={user} resumeItems={resumeItems} setResumeItems={setResumeItems} deleteResumeItem={deleteResumeItem} />
