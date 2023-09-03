@@ -8,10 +8,10 @@ import Slider from "react-slick";
 
 import PortfolioItemImage from "../../components/PortfolioItemImage/PortfolioItemImage";
 import PortfolioItemImageForm from "../../components/PortfolioItemImageForm/PortfolioItemImageForm"
-import { getPortfolioItems } from "../../utilities/api/portfolioItemImage";
+import { getPortfolioItem } from "../../utilities/api/portfolioItem"
 import './PortfolioDetailPage.css'
 
-export default function ProjectDetailPage({user, portfolioItems, setPortfolioItems}) {
+export default function ProjectDetailPage({user}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -25,28 +25,22 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
   
   const projectParams = useParams()
   const [project, setProject] = useState([])
-  const [projectImages, setProjectImages] = useState([])
 
-  useEffect(function () {
-    async function getImages() {
-      const portfolioItems = await getPortfolioItems();
-      // console.log("porfolio Items: ", portfolioItems)
-      const portfolioItem = await portfolioItems.filter((portfolioItem) => {
-        return portfolioItem.title.includes(projectParams.projectName)
-      })
-      setProject(portfolioItem[0])
-
-      setProjectImages(portfolioItem[0].portfolioItemImages)
-    }
-    getImages()
-  },[projectParams])
-  
-  function updateProjectImages(projectImageData) {
-    setProjectImages([...projectImages, projectImageData])
+  // console.log(project)
+  // console.log(projectParams)
+  const getProjectData = async () => {
+    const data = await getPortfolioItem(projectParams.projectName)
+    setProject(data)
   }
 
-  document.title = project.title
-  
+  function updateProject (data) {
+    setProject(data)
+  }
+
+  useEffect(() => {
+    getProjectData()
+    // eslint-disable-next-line
+  },[])
 
   return (
     <main id="">
@@ -62,42 +56,48 @@ export default function ProjectDetailPage({user, portfolioItems, setPortfolioIte
         </div>
       </section>
 
-      <section id="portfolio-details" className="portfolio-details PortfolioDetailPage">
-        <div className="container">
-            <div className="row gy-4">
-              <div className="col-lg-8">
-                <div className="text-center">
-                  <div className=" align-items-center mx-auto slider">
-                    <Slider {...settings} >
-                      {
-                        projectImages.map((portfolioImage, idx) => (
-                          <PortfolioItemImage portfolioImage={portfolioImage.image} key={idx} user={user} />
-                        ))
+      { project &&
+        <section id="portfolio-details" className="portfolio-details PortfolioDetailPage">
+          <div className="container">
+              <div className="row gy-4">
+                <div className="col-lg-8">
+                  <div className="text-center">
+                    <div className=" align-items-center mx-auto slider">
+                      { project.portfolioItemImages &&
+                        <Slider {...settings} >
+                          {
+                            project.portfolioItemImages.map((portfolioImage, idx) => (
+                              <PortfolioItemImage portfolioImage={portfolioImage.image} key={idx} user={user} />
+                            ))
+                          }
+                        </Slider>
                       }
-                    </Slider>
-                    <br />
+                      
+                      <br />
+                    </div>
+                    <PortfolioItemImageForm user={user} project={project} updateProject={updateProject} />
                   </div>
-                  <PortfolioItemImageForm user={user} project={project} projectImages={projectImages} updateProjectImages={updateProjectImages} />
                 </div>
-              </div>
 
-              <div className="col-lg-4">
-                <div className="portfolio-info">
-                  <ul>
-                    <li><strong>Project Date</strong>: {project.dateCreated}</li>
-                    <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>
-                    <li><strong>Project URL</strong>: <a href={`${project.siteURL}`} target="_blank" rel="noreferrer">{project.siteURL}</a></li>
-                  </ul>
-                </div>
-                <div className="portfolio-description">
-                  <p>
-                    {`${project.description}`}
-                  </p>
+                <div className="col-lg-4">
+                  <div className="portfolio-info">
+                    <ul>
+                      <li><strong>Project Date</strong>: {project.dateCreated}</li>
+                      <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>
+                      <li><strong>Project URL</strong>: <a href={`${project.siteURL}`} target="_blank" rel="noreferrer">{project.siteURL}</a></li>
+                    </ul>
+                  </div>
+                  <div className="portfolio-description">
+                    <p>
+                      {`${project.description}`}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-        </div>
-      </section>
+          </div>
+        </section>
+      }
+      
     </main>
     
   );

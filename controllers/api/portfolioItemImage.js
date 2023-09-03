@@ -6,25 +6,17 @@ async function createPortfolioItemImage (req, res, next){
     try{
         const portfolioItem = await PortfolioItem.findById(req.body.portfolioItemId)
         // console.log('The item is: ', portfolioItem)
-        const portfolioItemImage= await portfolioItem.portfolioItemImages.push(req.body);
+        portfolioItem.portfolioItemImages.push(req.body);
         portfolioItem.save()
+        const updatedPortfolioItem = await PortfolioItem.findById(req.body.portfolioItemId)
         // console.log('created Image:', portfolioItemImage)
-        res.json(portfolioItemImage)
+        res.json(updatedPortfolioItem)
     }catch(err){
         res.status(400).json(err);
     }
 }
 
-async function getPortfolioItems (req, res, next){
-    try{
-        const portfolioItems = await PortfolioItem.find({})
-        res.json(portfolioItems);
-    }catch(err){
-        res.status(400).json("Unable to retrieve Portfolio Items");
-    }
-}
 
 module.exports = {
     createPortfolioItemImage,
-    getPortfolioItems,
 }

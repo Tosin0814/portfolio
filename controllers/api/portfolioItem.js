@@ -19,6 +19,14 @@ async function getPortfolioItems (req, res, next){
         res.status(400).json("Unable to retrieve Portfolio Items");
     }
 }
+async function getPortfolioItem (req, res, next){
+    try{
+        const portfolioItems = await PortfolioItem.findOne({title: req.params.projectName})
+        res.json(portfolioItems);
+    }catch(err){
+        res.status(400).json("Unable to retrieve Portfolio Items");
+    }
+}
 
 async function removePortfolioItem (req, res, next){
     try{
@@ -43,6 +51,7 @@ async function updatePortfolioItem (req, res, next){
 module.exports = {
     createPortfolioItem,
     getPortfolioItems,
+    getPortfolioItem,
     updatePortfolioItem,
     removePortfolioItem,
 }
