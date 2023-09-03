@@ -16,7 +16,7 @@ export default function Home({user, home, setHome}) {
                     width: '100vw',
                     height: '100vh',
                     backgroundAttachment: 'fixed', 
-                    backgroundSize: 'cover', 
+                    backgroundSize: 'auto', 
                     backgroundRepeat: 'no-repeat', 
                     backgroundPositionY: 'top', 
                     backgroundPositionX: 'center', 
