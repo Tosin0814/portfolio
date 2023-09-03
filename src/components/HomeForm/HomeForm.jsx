@@ -45,24 +45,21 @@ export default function HomeForm({user,home, setHome}) {
         <>
             { user &&
                 <div className="HomeForm">
-                    <div className="form-container mx-auto border border-secondary p-3">
-                        <h4 className="text-center">Home Form</h4>
+                    <div className="form-container border border-secondary p-3">
+                        <h4 className="text-center">Home</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="title" className="form-label">Full Name</label>
                                 <input className="form-control" type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="text" className="form-label">Summary</label>
                                 <input className="form-control" type="text" name="text" id="text" value={formData.text} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group mb-1">
+                            <div className="form-group mb-3">
                                 <label htmlFor="image" className="form-label">Image URL</label>
                                 <input className="form-control" type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
                             </div>
-                            <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>

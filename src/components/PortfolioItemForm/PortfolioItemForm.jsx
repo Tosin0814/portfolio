@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createPortfolioItem } from "../../utilities/api/portfolioItem";
-
+import './PortfolioItemForm.css'
 
 export default function PortfolioItemForm({user, portfolioItems, setPortfolioItems}) {
     const defaultState = {
@@ -45,35 +45,30 @@ export default function PortfolioItemForm({user, portfolioItems, setPortfolioIte
     return (
         <>
             { user &&
-                <div className="ContactForm">
-                    <div className="form-container mx-auto w-75 bg-light border border-secondary p-2">
-                        <h4 className="text-center">Project Item Form</h4>
+                <div className="PortfolioItemForm">
+                    <div className="form-container w-100 border border-secondary">
+                        <h4 className="text-center">Project Item</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <div className="form-group">
-                                <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="title">Title</label>
+                                <input className="form-control" type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
-                                <label htmlFor="description">Description:&nbsp;</label>
-                                <textarea type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="description">Description</label>
+                                <textarea className="form-control" type="textarea" rows="7" cols="50" name="description" id="description" value={formData.description} onChange={handleChange} required></textarea>
                             </div>
-                            <br />
-                            <div className="form-group">
-                                <label htmlFor="dateCreated">Date Created:&nbsp;</label>
-                                <input type="month" name="dateCreated" id="dateCreated" value={formData.dateCreated} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="dateCreated">Date Created</label>
+                                <input className="form-control" type="month" name="dateCreated" id="dateCreated" value={formData.dateCreated} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
-                                <label htmlFor="github">GitHub:&nbsp;</label>
-                                <input type="text" name="github" id="github" value={formData.github} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="github">GitHub</label>
+                                <input className="form-control" type="text" name="github" id="github" value={formData.github} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div className="form-group">
-                                <label htmlFor="siteURL">Site URL:&nbsp;</label>
-                                <input type="text" name="siteURL" id="siteURL" value={formData.siteURL} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="siteURL">Site URL</label>
+                                <input className="form-control" type="text" name="siteURL" id="siteURL" value={formData.siteURL} onChange={handleChange} required/>
                             </div>
-                            <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>

@@ -1,5 +1,5 @@
-.ContactForm .form-container {
-    height: 45vh;
+.ProjectItemImageForm .form-container {
+    max-height: 28vh;
     width: 50%;
     overflow-y: scroll;
     border-radius: 5px;
@@ -9,10 +9,10 @@
     margin: 0 auto;
 }
 
-.ContactForm h4 {
+.ProjectItemImageForm h4 {
     font-weight: 800;
 }
 
-.ContactForm label {
+.ProjectItemImageForm label {
     font-size: 13px;
 }

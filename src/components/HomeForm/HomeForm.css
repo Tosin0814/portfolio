@@ -3,6 +3,7 @@
     max-width: 30vw;
     overflow-y: scroll;
     border-radius: 5px;
+    margin: 0 auto;
 }
 
 .HomeForm .form-container {

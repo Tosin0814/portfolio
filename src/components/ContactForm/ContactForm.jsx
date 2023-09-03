@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { create } from "../../utilities/api/contact"
-
+import './ContactForm.css'
 
 
 export default function ContactForm({user, contact, setContact}) {
@@ -46,24 +46,21 @@ export default function ContactForm({user, contact, setContact}) {
         <>
             { user &&
                 <div className="ContactForm">
-                    <div className="form-container mx-auto w-75 bg-light border border-secondary p-3">
-                        <h3 className="text-center">Contact Form</h3>
+                    <div className="form-container border border-secondary">
+                        <h4 className="text-center">Contact</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
-                            <div>
-                                <label htmlFor="phoneNumber">Phone Number:&nbsp;</label>
-                                <input type="text" name="phoneNumber" id="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="phoneNumber">Phone Number</label>
+                                <input className="form-control" type="text" name="phoneNumber" id="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div>
-                                <label htmlFor="email">Email:&nbsp;</label>
-                                <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="email">Email</label>
+                                <input className="form-control" type="email" name="email" id="email" value={formData.email} onChange={handleChange} required/>
                             </div>
-                            <br />
-                            <div>
-                                <label htmlFor="location">Location:&nbsp;</label>
-                                <input type="text" name="location" id="location" value={formData.location} onChange={handleChange} required/>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="location">Location</label>
+                                <input className="form-control" type="text" name="location" id="location" value={formData.location} onChange={handleChange} required/>
                             </div>
-                            <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>
