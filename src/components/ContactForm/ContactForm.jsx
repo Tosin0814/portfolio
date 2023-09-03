@@ -47,7 +47,7 @@ export default function ContactForm({user, contact, setContact}) {
             { user &&
                 <div className="ContactForm">
                     <div className="form-container border border-secondary">
-                        <h4 className="text-center">Contact Form</h4>
+                        <h4 className="text-center">Contact</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="phoneNumber">Phone Number</label>
