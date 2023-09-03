@@ -45,7 +45,7 @@ export default function HomeForm({user,home, setHome}) {
         <>
             { user &&
                 <div className="HomeForm">
-                    <div className="form-container mx-auto  bg-light border border-secondary p-3">
+                    <div className="form-container mx-auto border border-secondary p-3">
                         <h4 className="text-center">Home Form</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-1">
@@ -63,7 +63,6 @@ export default function HomeForm({user,home, setHome}) {
                                 <input className="form-control" type="text" name="image" id="image" value={formData.image} onChange={handleChange} required/>
                             </div>
                             <br />
-                            
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>
                     </div>

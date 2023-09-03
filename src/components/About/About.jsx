@@ -38,7 +38,9 @@ export default function About({user, about, setAbout}) {
                         }
                     </div>
                 </div>
-                <AboutForm user={user} about={about} setAbout={setAbout}/>
+                <div className="text-center AboutForm mx-auto">
+                    <AboutForm user={user} about={about} setAbout={setAbout}/>
+                </div>
             </div>
         </section>
     )
