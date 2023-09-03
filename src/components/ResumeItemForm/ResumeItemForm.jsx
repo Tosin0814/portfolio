@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createResumeItem } from "../../utilities/api/resumeItem";
-
+import './ResumeItemForm.css'
 
 export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
     const defaultState = {
@@ -50,13 +50,13 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
     return (
         <>
             { user &&
-                <div className="ContactForm">
-                    <div className="form-container mx-auto w-75 bg-light border border-secondary p-2">
+                <div className="ResumeItemForm">
+                    <div className="form-container w-100 border border-secondary">
                         <h3 className="text-center">Resume Item Form</h3>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group">
-                                <label htmlFor="type">Type:&nbsp;</label>
-                                <select name="type" id="type" onChange={handleChange} defaultValue={'default'} required>
+                                <label className="form-label" htmlFor="type">Type</label>
+                                <select name="type" className="form-select" id="type" onChange={handleChange} defaultValue={'default'} required>
                                     <option value={"default"} disabled hidden>Select an Option</option>
                                     <option value={'edu'}>Education</option>
                                     <option value={'work'}>Work Experience</option>
@@ -64,48 +64,48 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="title">Title:&nbsp;</label>
-                                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
+                                <label className="form-label" htmlFor="title">Title</label>
+                                <input className="form-control" type="text" name="title" id="title" value={formData.title} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="start">Start:&nbsp;</label>
-                                <input type="month" name="start" id="start" value={formData.start} onChange={handleChange} required/>
+                                <label className="form-label" htmlFor="start">Start</label>
+                                <input className="form-control" type="month" name="start" id="start" value={formData.start} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="end">End:&nbsp;</label>
-                                <input type="month" name="end" id="end" value={formData.end} onChange={handleChange} required/>
+                                <label className="form-label" htmlFor="end">End</label>
+                                <input className="form-control" type="month" name="end" id="end" value={formData.end} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="institution">Institution:&nbsp;</label>
-                                <input type="text" name="institution" id="institution" value={formData.institution} onChange={handleChange} required/>
+                                <label className="form-label" htmlFor="institution">Institution</label>
+                                <input className="form-control" type="text" name="institution" id="institution" value={formData.institution} onChange={handleChange} required/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="description1">Description 1:&nbsp;</label>
-                                <textarea type="text" name="description1" id="description1" value={formData.description1} onChange={handleChange} required></textarea>
+                                <label className="form-label" htmlFor="description1">Description 1</label>
+                                <textarea className="form-control" type="text" name="description1" id="description1" value={formData.description1} onChange={handleChange} required></textarea>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="description2">Description 2(Optional):&nbsp;</label>
-                                <textarea type="text" name="description2" id="description2" value={formData.description2} onChange={handleChange} ></textarea>
+                                <label className="form-label" htmlFor="description2">Description 2(Optional)</label>
+                                <textarea className="form-control" type="text" name="description2" id="description2" value={formData.description2} onChange={handleChange} ></textarea>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="description3">Description 3(Optional):&nbsp;</label>
-                                <textarea type="text" name="description3" id="description3" value={formData.description3} onChange={handleChange} ></textarea>
+                                <label className="form-label" htmlFor="description3">Description 3(Optional)</label>
+                                <textarea className="form-control" type="text" name="description3" id="description3" value={formData.description3} onChange={handleChange} ></textarea>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="description4">Description 4(Optional):&nbsp;</label>
-                                <textarea type="text" name="description4" id="description4" value={formData.description4} onChange={handleChange} ></textarea>
+                                <label className="form-label" htmlFor="description4">Description 4(Optional)</label>
+                                <textarea className="form-control" type="text" name="description4" id="description4" value={formData.description4} onChange={handleChange} ></textarea>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="description5">Description 5(Optional):&nbsp;</label>
-                                <textarea type="text" name="description5" id="description5" value={formData.description5} onChange={handleChange} ></textarea>
+                                <label className="form-label" htmlFor="description5">Description 5(Optional)</label>
+                                <textarea className="form-control" type="text" name="description5" id="description5" value={formData.description5} onChange={handleChange} ></textarea>
                             </div>
                             <br />
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>

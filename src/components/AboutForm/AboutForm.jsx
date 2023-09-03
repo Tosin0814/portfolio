@@ -49,7 +49,7 @@ export default function AboutForm({user, about, setAbout}) {
                         <h4 className="text-center">About Form</h4>
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="form-group mb-3">
-                                <label htmlFor="jobTitle">Job Title</label>
+                                <label htmlFor="jobTitle" className="form-label">Job Title</label>
                                 <input type="text" className="form-control" name="jobTitle" id="jobTitle" value={formData.jobTitle} onChange={handleChange} required/>
                             </div>
                             <div className="form-group mb-3">
