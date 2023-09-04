@@ -20,9 +20,8 @@ export default function Resume({user, resumeItems, setResumeItems, deleteResumeI
                 <div className="row">
                     <p>
                         <em>
-                            A Full Stack Software Developer not afraid to take on new challenges, 
-                            hyper-focused on getting things done to completion and obsessed with 
-                            product optimization.
+                        A Full Stack Software Developer hyper-focused on project success, 
+                        obsessed with product optimization and unafraid to take on new challenges.
                         </em>
                     </p>
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">

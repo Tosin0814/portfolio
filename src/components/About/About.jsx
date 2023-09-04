@@ -29,13 +29,12 @@ export default function About({user, about, setAbout}) {
                         {/* { about.jobTitle &&
                             <h3>{about.jobTitle}</h3>
                         } */}
-                        
                         { about.text2 &&
                             <p>{about.text2}</p>
                         }
-                        { about.text3 &&
+                        {/* { about.text3 &&
                             <p>{about.text3}</p>
-                        }
+                        } */}
                     </div>
                 </div>
                 <div className="text-center AboutForm mx-auto">
