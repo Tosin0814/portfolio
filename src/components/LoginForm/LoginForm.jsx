@@ -63,12 +63,12 @@ export default function LoginForm({ user, setUser }) {
             <form onSubmit={handleSubmit} autoComplete="off">
                 <div className='form-group mb-1'>
                     <label htmlFor="login-email" className="form-label">Email:&nbsp;</label>
-                    <input type="text" className="form-control" name="email" id="login-email" value={email} onChange={handleChange} required />
+                    <input type="text" className="form-control" name="email" id="login-email" defaultValue={email} onChange={handleChange} required />
                 </div>
                 <br />
                 <div className='form-group mb-1'>
                     <label htmlFor="login-password" className="form-label">Password:&nbsp;</label>
-                    <input type="password" className="form-control" name="password" id="login-password" value={password} onChange={handleChange} required />
+                    <input type="password" className="form-control" name="password" id="login-password" defaultValue={password} onChange={handleChange} required />
                 </div>
                 <br />
                 <button type="submit" disabled={disabled} className="btn btn-primary">Log In</button>

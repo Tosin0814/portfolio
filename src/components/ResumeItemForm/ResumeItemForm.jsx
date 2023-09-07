@@ -7,18 +7,20 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
         type:'',
         title:'',
         start:'',
-        end:'',
+        end:'Present',
         institution:'',
         description1:'',
         description2:'',
         description3:'',
         description4:'',
         description5:'',
+        description6:'',
+        description7:'',
     }
     const [formData, setFormData] = useState(defaultState)
 
     const handleSubmit = async (e) =>{
-        
+        console.log(formData)
         e.preventDefault();
         
         try{
@@ -45,7 +47,7 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
         setFormData(newFormData);
 
     }
-    const disabled = !formData.type || !formData.description1 || !formData.start || !formData.end || !formData.institution || !formData.title
+    const disabled = !formData.type || !formData.description1 || !formData.start || !formData.institution || !formData.title
 
     return (
         <>
@@ -68,11 +70,11 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
                             </div>
                             <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="start">Start</label>
-                                <input className="form-control" type="month" name="start" id="start" value={formData.start} onChange={handleChange} required/>
+                                <input className="form-control" type="text" name="start" placeholder="yyyy-mm" id="start" value={formData.start} onChange={handleChange} required/>
                             </div>
                             <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="end">End</label>
-                                <input className="form-control" type="month" name="end" id="end" value={formData.end} onChange={handleChange} required/>
+                                <input className="form-control" type="text" name="end" placeholder="yyyy-mm" id="end" value={formData.end} onChange={handleChange}/>
                             </div>
                             <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="institution">Institution</label>
@@ -97,6 +99,14 @@ export default function ResumeItemForm({user, resumeItems, setResumeItems}) {
                             <div className="form-group mb-3">
                                 <label className="form-label" htmlFor="description5">Description 5 (Optional)</label>
                                 <textarea className="form-control" type="text" name="description5" id="description5" value={formData.description5} onChange={handleChange} ></textarea>
+                            </div>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="description6">Description 6 (Optional)</label>
+                                <textarea className="form-control" type="text" name="description6" id="description6" value={formData.description6} onChange={handleChange} ></textarea>
+                            </div>
+                            <div className="form-group mb-3">
+                                <label className="form-label" htmlFor="description7">Description 7 (Optional)</label>
+                                <textarea className="form-control" type="text" name="description7" id="description7" value={formData.description7} onChange={handleChange} ></textarea>
                             </div>
                             <button type="submit" disabled={disabled} className="btn btn-primary">Submit</button>
                         </form>

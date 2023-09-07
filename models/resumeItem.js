@@ -29,6 +29,7 @@ const resumeItemSchema = new Schema({
     },
     end: {
         type: String,
+        default: 'Present',
         required: true
     },
     institution: {
@@ -49,6 +50,12 @@ const resumeItemSchema = new Schema({
         type: String,
     },
     description5:{
+        type: String,
+    },
+    description6:{
+        type: String,
+    },
+    description7:{
         type: String,
     },
 }, {
