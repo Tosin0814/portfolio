@@ -26,7 +26,12 @@ export default function ResumeItem({user, resumeItem, deleteResumeItem}) {
                 { resumeItem.description5 &&
                     <li>{resumeItem.description5}</li>
                 }
-                
+                { resumeItem.description6 &&
+                    <li>{resumeItem.description6}</li>
+                }
+                { resumeItem.description7 &&
+                    <li>{resumeItem.description7}</li>
+                }
                 
             </ul>
             

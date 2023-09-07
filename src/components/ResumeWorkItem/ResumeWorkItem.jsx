@@ -6,7 +6,7 @@ export default function ResumeItem({user, resumeItem, deleteResumeItem}) {
         await deleteResumeItem(resumeItem)
     }
     return(
-        <div className="resume-item">
+        <div className="ResumeItem resume-item">
             <h4>{resumeItem.title}</h4>
             <h5>{resumeItem.start} to {resumeItem.end}</h5>
             <p><em>{resumeItem.institution}</em></p>
@@ -25,6 +25,12 @@ export default function ResumeItem({user, resumeItem, deleteResumeItem}) {
                 }
                 { resumeItem.description5 &&
                     <li>{resumeItem.description5}</li>
+                }
+                { resumeItem.description6 &&
+                    <li>{resumeItem.description6}</li>
+                }
+                { resumeItem.description7 &&
+                    <li>{resumeItem.description7}</li>
                 }
                 
                 
