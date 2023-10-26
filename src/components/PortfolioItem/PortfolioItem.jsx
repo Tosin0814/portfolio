@@ -13,7 +13,7 @@ export default function PortfolioItem({user, portfolioItem, deletePortfolioItem}
                     <i className="bx bx-link"></i>
                     <div className="portfolio-wrap">
                         {portfolioItem.portfolioItemImages[0] &&
-                            <img src={portfolioItem.portfolioItemImages[0].image} className="img-fluid" alt="Not found" style={{width:500, height:150}}/>
+                            <img src={portfolioItem.portfolioItemImages[0].image} className="img-fluid" alt="Not found" style={{width:500, height:200}}/>
                         }
                     </div>
                     <h5 className="text-center text-dark">{portfolioItem.title}</h5>
