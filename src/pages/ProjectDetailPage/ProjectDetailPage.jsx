@@ -19,7 +19,7 @@ export default function ProjectDetailPage({user}) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     cssEase: "linear",
   };
   
@@ -59,41 +59,41 @@ export default function ProjectDetailPage({user}) {
       { project &&
         <section id="portfolio-details" className="portfolio-details PortfolioDetailPage">
           <div className="container">
-              <div className="row gy-4">
-                <div className="col-lg-8">
-                  <div className="text-center">
-                    <div className=" align-items-center mx-auto slider">
-                      { project.portfolioItemImages &&
-                        <Slider {...settings} >
-                          {
-                            project.portfolioItemImages.map((portfolioImage, idx) => (
-                              <PortfolioItemImage portfolioImage={portfolioImage.image} key={idx} user={user} />
-                            ))
-                          }
-                        </Slider>
-                      }
-                      
-                      <br />
-                    </div>
-                    <PortfolioItemImageForm user={user} project={project} updateProject={updateProject} />
+            <div className="row gy-4">
+              <div className="col-lg-8">
+                <div className="text-center">
+                  <div className=" align-items-center mx-auto slider">
+                    { project.portfolioItemImages &&
+                      <Slider {...settings} >
+                        {
+                          project.portfolioItemImages.map((portfolioImage, idx) => (
+                            <PortfolioItemImage portfolioImage={portfolioImage.image} key={idx} user={user} />
+                          ))
+                        }
+                      </Slider>
+                    }
+                    
+                    <br />
                   </div>
-                </div>
-
-                <div className="col-lg-4">
-                  <div className="portfolio-info">
-                    <ul>
-                      <li><strong>Project Date</strong>: {project.dateCreated}</li>
-                      <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>
-                      <li><strong>Project URL</strong>: <a href={`${project.siteURL}`} target="_blank" rel="noreferrer">{project.siteURL}</a></li>
-                    </ul>
-                  </div>
-                  <div className="portfolio-description">
-                    <p>
-                      {`${project.description}`}
-                    </p>
-                  </div>
+                  <PortfolioItemImageForm user={user} project={project} updateProject={updateProject} />
                 </div>
               </div>
+
+              <div className="col-lg-4 bg-danger">
+                <div className="portfolio-info">
+                  <ul>
+                    <li><strong>Project Date</strong>: {project.dateCreated}</li>
+                    <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>
+                    <li><strong>Project URL</strong>: <a href={`${project.siteURL}`} target="_blank" rel="noreferrer">{project.siteURL}</a></li>
+                  </ul>
+                </div>
+                <div className="portfolio-description">
+                  <p>
+                    {`${project.description}`}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       }

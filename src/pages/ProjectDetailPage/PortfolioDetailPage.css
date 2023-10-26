@@ -3,6 +3,8 @@
 --------------------------------------------------------------*/
 .portfolio-details {
     padding-top: 40px;
+    white-space: break-spaces;
+    overflow: auto;
 }
   
 .portfolio-details .portfolio-details-slider img {
@@ -64,11 +66,30 @@
 }
 
 .slider {
-    width: 600px;
+    width: 650px;
+    height: 375px;
 }
 
 @media (max-width: 768px) {
     .slider {
-        width: 350px;
+        width: 600px;
+        height: 300px;
+    }
+    .portfolio-details .container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .slider {
+        width: 550px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .slider {
+        width: 550px;
+        height: 300px;
     }
 }
