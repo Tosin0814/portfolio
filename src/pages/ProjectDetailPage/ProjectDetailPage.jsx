@@ -79,7 +79,7 @@ export default function ProjectDetailPage({user}) {
                 </div>
               </div>
 
-              <div className="col-lg-4 bg-danger">
+              <div className="col-lg-4">
                 <div className="portfolio-info">
                   <ul>
                     <li><strong>Project Date</strong>: {project.dateCreated}</li>
