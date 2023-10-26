@@ -4,10 +4,3 @@
     border: 1px solid rgba(0,0,0,0.2);
     
 }
-
-@media (max-width: 768px) {
-    .slider {
-        width: 350px;
-        height: 175px;
-    }
-}
