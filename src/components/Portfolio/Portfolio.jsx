@@ -19,7 +19,7 @@ export default function Portfolio({user, portfolioItems, setPortfolioItems, dele
                 </div>
                 <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
                     { portfolioItems &&
-                        portfolioItems.map((portfolioItem, idx) => (
+                        portfolioItems.sort((a, b) => a.createdAt > b.createdAt ? -1 : 1).map((portfolioItem, idx) => (
                             <PortfolioItem key={idx} portfolioItem={portfolioItem} deletePortfolioItem={deletePortfolioItem} user={user} />
                         ))
                     }
