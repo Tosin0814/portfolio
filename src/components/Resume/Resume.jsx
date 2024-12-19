@@ -27,7 +27,7 @@ export default function Resume({user, resumeItems, setResumeItems, deleteResumeI
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <h3 className="resume-title">Work Experience</h3>
                         { resumeItems &&
-                            resumeItems.map((resumeItem, idx) =>(
+                            resumeItems.sort((a, b) => a.start > b.start ? -1 : 1).map((resumeItem, idx) =>(
                                 resumeItem.type==='work' ? <ResumeWorkItem key={idx} resumeItem={resumeItem} deleteResumeItem={deleteResumeItem} user={user} />
                                 : ""
                             ))
@@ -36,7 +36,7 @@ export default function Resume({user, resumeItems, setResumeItems, deleteResumeI
                     <div className="col-lg-6" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                         <h3 className="resume-title">Education</h3>
                         { resumeItems &&
-                            resumeItems.map((resumeItem, idx) =>(
+                            resumeItems.sort((a, b) => a.start > b.start ? -1 : 1).map((resumeItem, idx) =>(
                                 resumeItem.type==='edu' ? <ResumeEduItem key={idx} resumeItem={resumeItem} deleteResumeItem={deleteResumeItem} user={user} />
                                 : ""
                             ))
