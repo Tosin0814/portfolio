@@ -28,7 +28,7 @@ export default function Home({user, home, setHome}) {
                 }
                 
                 }>
-                <div className="hero-container" data-aos-delay='100' data-aos="fade-up" data-aos-duration="1000">
+                <div className="hero-container" data-aos-delay='100' data-aos="fade-up" data-aos-duration="3000">
                     <span><h3 className="text-light">I am </h3></span><span><h1>{home.title}.</h1></span>
                     <p>{home.text}</p>
                 </div>

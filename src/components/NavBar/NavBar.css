@@ -4,6 +4,7 @@
   }
   
   .nav-menu * {
+    width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -11,7 +12,17 @@
   
   .nav-menu>ul>li {
     position: relative;
+    width: 100%;
     white-space: nowrap;
+    /* background-color: yellow; */
+  }
+
+  .nav-menu>ul>li div {
+    position: relative;
+    width: fit-content;
+    white-space: nowrap;
+    text-align: center;
+    /* background-color: yellow; */
   }
   
   .nav-menu a,
@@ -30,6 +41,7 @@
     font-size: 24px;
     padding-right: 8px;
     color: #6f7180;
+    width: fit-content;
   }
   
   .nav-menu a:hover,

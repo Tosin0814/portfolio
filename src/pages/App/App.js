@@ -57,6 +57,7 @@ export default function App() {
           <Route path="/" element={<HomePage user={user} setUser={setUser} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} deletePortfolioItem={deletePortfolioItem} />} />
           <Route path="/projects/:projectName" element={<ProjectDetailPage user={user} />} />
           <Route path="/AdminLogin" element={<LoginForm user={user} setUser={setUser} />} />
+          <Route path="*" element={<HomePage user={user} setUser={setUser} portfolioItems={portfolioItems} setPortfolioItems={setPortfolioItems} deletePortfolioItem={deletePortfolioItem} />} />
       </Routes>
     </>
   );
