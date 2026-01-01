@@ -30,7 +30,11 @@ export default function ProjectDetailPage({user}) {
   // console.log(projectParams)
   const getProjectData = async () => {
     const data = await getPortfolioItem(projectParams.projectName)
-    setProject(data)
+    if (data) {
+      setProject(data)
+    } else {
+      setProject([])
+    }
   }
 
   function updateProject (data) {
@@ -47,7 +51,7 @@ export default function ProjectDetailPage({user}) {
       <section id="breadcrumbs" className="breadcrumbs">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
-            <h2>{project.title} Details</h2>
+            <h2>{project.title}</h2>
             <ol>
               <li><a href="/">Home</a></li>
               <li>{project.title}</li>
@@ -83,8 +87,8 @@ export default function ProjectDetailPage({user}) {
                 <div className="portfolio-info">
                   <ul>
                     <li><strong>Project Date</strong>: {project.dateCreated}</li>
-                    <li><strong>GitHub</strong>: <a href={`${project.github}`} target="_blank" rel="noreferrer">{project.github}</a></li>
-                    <li><strong>Project URL</strong>: <a href={`${project.siteURL}`} target="_blank" rel="noreferrer">{project.siteURL}</a></li>
+                    {/* <li><strong>GitHub</strong>: <a href={`${project.github? project.github : ''}`} target="_blank" rel="noreferrer">{project.github}</a></li> */}
+                    <li><strong>Demo</strong>: <a href={`${project.siteURL? project.siteURL : ''}`} target="_blank" rel="noreferrer"><i>{project.siteURL? 'Video Link' : ''}</i></a></li>
                   </ul>
                 </div>
                 <div className="portfolio-description">
